@@ -70,3 +70,14 @@
 .card-content {
     overflow: auto;
 }
+
+body {
+    background-image: linear-gradient(to bottom right, darkblue, violet);
+}
+
+.footer {
+    background-color: black;
+    color: whitesmoke;
+    text-align: center;
+    justify-content: center;
+}
