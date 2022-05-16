@@ -44,7 +44,7 @@
 
 .item.list-group-item:before, .item.list-group-item:after
 {
-    display: table;
+    display : table;
     content: " ";
 }
 
@@ -61,6 +61,12 @@
     margin: 0 0 11px;
 }
 
-.card {
+.row .card {
     margin: 15px;
+    height: 32.5em;
+    width: 20em;
+}
+
+.card-content {
+    overflow: auto;
 }

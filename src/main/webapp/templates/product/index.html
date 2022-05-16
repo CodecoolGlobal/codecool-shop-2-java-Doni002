@@ -30,9 +30,22 @@
 
 <body>
 
-<div class="jumbotron text-center">
-    <h1>Codecool Shop</h1>
-</div>
+<!--<div class="jumbotron text-center">-->
+<!--    <h1>Codecool Shop</h1>-->
+<!--</div>-->
+
+<header>
+    <a class="logo" href="/"><img src="/static/img/VibeHub_Logo.png" alt="logo"></a>
+    <nav>
+        <ul class="nav__links">
+            <li><a href = "https://www.google.com">Home</a></li>
+            <li><a href = "https://telex.hu/">News</a></li>
+            <li><a href = "https://codecool.com/hu/rolunk-kapcsolat/">About</a></li>
+        </ul>
+    </nav>
+    <a class="cta" href = "https://codecool.com/hu/kapcsolat/">Contact</a>
+    <p class="menu cta">Menu</p>
+</header>
 
 <div class="container">
     <div class="card">
@@ -45,6 +58,8 @@
                 <img class="" src="http://placehold.it/400x250/000/fff" th:attr="src='/static/img/product_' + ${prod.id} + '.jpg'" alt="" />
                 <div class="card-header">
                     <h4 class="card-title" th:text="${prod.name}">Product name</h4>
+                </div>
+                <div class="card-content">
                     <p class="card-text" th:text="${prod.description}">Product description... </p>
                 </div>
                 <div class="card-body">
