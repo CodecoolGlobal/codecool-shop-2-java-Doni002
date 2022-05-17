@@ -62,9 +62,10 @@
 }
 
 .row .card {
-    margin: 2.5em;
+    margin: 1.5em;
+    padding: 0.25em;
     height: 32.5em;
-    width: 20em;
+    /*width: 20em;*/
     opacity: 0.9;
 }
 
@@ -95,10 +96,15 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
 }
 
 .outer-ring {
-    position: fixed;
+    position: absolute;
     left: calc(50% - 150px);
-    height: 380px;
-    width: 380px;
+    /*left: calc(50% - 15vw);*/
+    height: 260px;
+    width: 260px;
+
+    /*height: 43.25vw;*/
+    /*width: 43.25vw;*/
+
     background-image: linear-gradient(135deg, #FEED07 0%, #FE6A50 5%, #ED00AA 15%, #2FE3FE 50%, #8900FF 100%);
     border-radius: 50%;
 
@@ -109,10 +115,15 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
 }
 
 .inner-ring {
-    position: fixed;
+    position: absolute;
     left: calc(50% - 140px);
-    height: 360px;
-    width: 360px;
+    /*left: calc(50% - 14.3vw);*/
+    height: 240px;
+    width: 240px;
+
+    /*height: 40vw;*/
+    /*width: 40vw;*/
+
     opacity: 0.95;
     /*background-image: linear-gradient(0deg, black, black);*/
     background-image: url("/static/pictures/girl.jpg");
@@ -163,17 +174,22 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
 }
 
 .col > .card {
-    animation-duration: 3s;
+    animation-duration: 3.5s;
     animation-name: animate-fade, slidein;
+}
+
+.img {
+    border: solid 2px green;
+    filter: drop-shadow(-4px 5px 10px black);
 }
 
 @keyframes slidein {
     from {
-        margin-left: 200%;
+        margin-left: 50%;
     }
 
     to {
-        margin-left: 10%;
+        margin: 1.5em;
     }
 }
 
@@ -184,6 +200,8 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
 
 .container {
     padding: 40px;
+    height: 126%;
+    display: block;
 }
 
 .label {
