@@ -185,3 +185,11 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
 .container {
     padding: 40px;
 }
+
+.label {
+    color: whitesmoke;
+    font-weight: bold;
+    font-family: "poppins", sans-serif;
+    text-align: center;
+    justify-content: center;
+}
