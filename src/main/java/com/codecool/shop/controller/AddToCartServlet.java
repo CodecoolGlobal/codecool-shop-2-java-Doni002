@@ -1,7 +1,6 @@
 package com.codecool.shop.controller;
 
-import com.codecool.shop.config.Initializer;
-import com.codecool.shop.dao.ProductCategoryDao;
+import com.codecool.shop.config.DataBaseInitializer;
 import com.codecool.shop.dao.implementation.CartDaoMem;
 import com.codecool.shop.model.Product;
 
@@ -18,7 +17,8 @@ public class AddToCartServlet extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int productId = Integer.parseInt(req.getParameter("productId"));
-        System.out.println(Initializer.productDataStore.find(productId));
+        Product product = DataBaseInitializer.productDataStore.find(productId);
+        CartDaoMem.add(product);
 
 
     }

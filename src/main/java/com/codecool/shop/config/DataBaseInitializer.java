@@ -16,7 +16,7 @@ import javax.servlet.annotation.WebListener;
 import java.math.BigDecimal;
 
 @WebListener
-public class Initializer implements ServletContextListener {
+public class DataBaseInitializer implements ServletContextListener {
 
     public static ProductDao productDataStore;
     public static ProductCategoryDao productCategoryDataStore;
