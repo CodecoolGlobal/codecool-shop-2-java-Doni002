@@ -4,15 +4,23 @@ function init(){
 
 function getButtons(){
     document.querySelectorAll(".btn-success").forEach(addEventListenersForButtons)
-
 }
 
 function addEventListenersForButtons(btn){
-    btn.addEventListener("click",() => addToCart(btn.getAttribute("productId")));
+    btn.addEventListener("click",() => addToCart(btn));
 }
 
-function addToCart(productId){
-    console.log(productId);
+function addToCart(btn){
+    let card = btn.parentElement.parentElement.parentElement;
+    sendProductIdToBackEnd(btn.getAttribute("productId"));
+}
+
+function getFetchedProduct(url){
+    fetch(url);
+}
+
+function sendProductIdToBackEnd(productId){
+    getFetchedProduct("/cart/add?productId=" + productId);
 }
 
 init();
