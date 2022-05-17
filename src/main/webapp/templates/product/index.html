@@ -43,8 +43,8 @@
     <a class="logo" href="/"><img src="/static/pictures/VibeHub_Logo.png" alt="logo"></a>
     <nav>
         <ul class="nav__links">
-            <li><a href = "https://www.google.com">Home</a></li>
-            <li><a href = "https://telex.hu/">News</a></li>
+            <li><a href = "#">Category</a></li>
+            <li><a href = "https://www.cyberpunk.net/en/news/">News</a></li>
             <li><a href = "https://codecool.com/hu/rolunk-kapcsolat/">About</a></li>
         </ul>
     </nav>
@@ -60,7 +60,7 @@
         <div class="outer-ring center"></div>
         <div class="inner-ring center"></div>
         <div class="col col-sm-12 col-md-6 col-lg-4" th:each="prod,iterStat : ${products}">
-            <div class="card gradient-border" style="color: whitesmoke">
+            <div class="card gradient-border card-animation" style="color: whitesmoke">
                 <img class="" src="http://placehold.it/400x250/000/fff" th:attr="src='/static/img/product_' + ${prod.id} + '.jpg'" alt="" />
                 <div class="card-header">
                     <h4 class="card-title" th:text="${prod.name}">Product name</h4>
