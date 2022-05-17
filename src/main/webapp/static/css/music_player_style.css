@@ -22,17 +22,16 @@
     /*border: solid 10px black;*/
 
     padding: 1em;
-    border: 1px solid transparent;
+    /*border: 1px solid transparent;*/
     background:
             url('/static/pictures/nightcity.jpg');
     animation: moving 5s linear infinite;
     animation-direction: alternate-reverse;
-
+    border-top: inset 5px purple;
 }
 
 .music img {
     width: calc(2 / 4 * 100%);
-
 }
 
 .music {

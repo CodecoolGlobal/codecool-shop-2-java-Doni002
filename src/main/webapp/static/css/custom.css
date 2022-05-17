@@ -162,7 +162,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
     }
 }
 
-.card {
+#products > .card {
     animation-duration: 3s;
     animation-name: animate-fade, slidein;
 }
