@@ -25,7 +25,7 @@
     /*border: 1px solid transparent;*/
     background:
             url('/static/pictures/nightcity.jpg');
-    animation: moving 5s linear infinite;
+    animation: moving 10s linear infinite;
     animation-direction: alternate-reverse;
     border-top: inset 5px purple;
 }
