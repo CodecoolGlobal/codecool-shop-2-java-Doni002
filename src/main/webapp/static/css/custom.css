@@ -70,8 +70,15 @@
 
 
 .card-content {
-    overflow: auto;
+    overflow: hidden;
+    overflow-y: scroll;
     font-family: "poppins", sans-serif;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+.card-content::-webkit-scrollbar {
+    display: none;
 }
 
 html,
@@ -82,26 +89,28 @@ body {
 }
 
 .outer-ring {
-    position: absolute;
+    position: fixed;
     left: calc(50% - 150px);
-    height: 360px;
-    width: 360px;
+    height: 380px;
+    width: 380px;
     background-image: linear-gradient(135deg, #FEED07 0%, #FE6A50 5%, #ED00AA 15%, #2FE3FE 50%, #8900FF 100%);
     border-radius: 50%;
 
     /*  Rotate  */
-    animation-duration: 2s;
+    animation-duration: 3s;
     animation-name: rotate;
     animation-iteration-count: infinite;
 }
 
 .inner-ring {
-    position: absolute;
+    position: fixed;
     left: calc(50% - 140px);
-    height: 340px;
-    width: 340px;
+    height: 360px;
+    width: 360px;
     opacity: 0.95;
-    background-image: linear-gradient(0deg, black, black);
+    /*background-image: linear-gradient(0deg, black, black);*/
+    background-image: url("/static/pictures/girl.jpg");
+    background-size: auto;
     border-radius: 50%;
 }
 
@@ -145,4 +154,28 @@ body {
     100% {
         background-position: 0% 50%;
     }
+}
+
+.card {
+    animation-duration: 3s;
+    animation-name: animate-fade, slidein;
+}
+
+@keyframes slidein {
+    from {
+        margin-left: 200%;
+    }
+
+    to {
+        margin-left: 10%;
+    }
+}
+
+@keyframes animate-fade {
+    0% { opacity: 0; }
+    100% { opacity: 0.9; }
+}
+
+.container {
+    padding: 40px;
 }
