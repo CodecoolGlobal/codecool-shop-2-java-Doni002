@@ -10,15 +10,15 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 10%;
   background-color: black;
   filter: drop-shadow(0 6px 5px white);
+  position: initial;
 }
 
 .cta {background-image: linear-gradient(to right, violet 0%, darkblue  51%, violet  100%)}
 .cta {
-  margin: 10px;
-  padding: 15px 45px;
+  margin: 1vw;
+  padding: 1vw 2vw;
   text-align: center;
   text-transform: uppercase;
   transition: 0.5s;
@@ -50,59 +50,50 @@ header {
   text-decoration: none;
 }
 
-/*.nav__links {*/
-/*  list-style: none;*/
-/*  display: flex;*/
-/*}*/
-
-/*.nav__links li {*/
-/*  padding: 0em 2em;*/
-/*}*/
-
-/*.nav__links li a {*/
-/*  transition: color 0.3s ease 0s;*/
-/*  padding: 5px;*/
-/*  border-radius: .5em;*/
-/*  font-size: 1.5em;*/
-/*}*/
-
-/*.nav__links li a:hover {*/
-/*  background-image: linear-gradient(to right, violet 0%, darkblue  51%, violet  100%);*/
-/*  border: solid 1px whitesmoke;*/
-
-/*}*/
-
 .option {
   background-color: violet;
 }
 
-.button {
+.button, .span {
   border-radius: 4px;
   background: linear-gradient(150deg, #072c94, #93c8c4, #2c2e3b);
   border: solid 1px whitesmoke;
   color: #FFFFFF;
   text-align: center;
-  font-size: 30px;
+  font-size: 1.5vw;
   padding: 0.25em;
   transition: all 0.5s;
   cursor: pointer;
+  margin: 1vw;
 }
 
-.button span:after {
+.button span:after, .span span:after {
   content: '\00bb';
-  position: absolute;
+  position: relative;
   opacity: 0;
-  right: 0.25em;
+  right: 0.50em;
   transition: 0.5s;
 }
 
-.button:hover span {
-  padding-right: 25px;
+.button:hover span, .span:hover span{
+  padding-right: 10px;
 }
 
-.button:hover span:after {
+.button:hover span:after, .span:hover span:after{
   opacity: 1;
-  right: 0;
+  right: -10px;
+}
+
+.nav {
+  margin: auto;
+  display: flex;
+  align-items: center;
+  padding: 1.5vw;
+}
+
+.logo {
+  margin: 1vw;
+  padding-right: 5vw;
 }
 
 /* Mobile Nav */
@@ -165,13 +156,14 @@ header {
   }
 }
 
-@media only screen and (max-width: 800px) {
-  /*.nav__links,*/
-  .cta {
-    display: none;
+@media only screen and (max-width: 1010px) {
+  .nav {
+    flex-direction: column;
   }
-  .menu {
-    display: initial;
+
+  .logo {
+    margin: 0;
+    padding-right: 0;
   }
 }
 
