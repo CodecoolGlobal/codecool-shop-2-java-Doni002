@@ -5,9 +5,6 @@
 }
 
 .music_player {
-    /*background-image: linear-gradient(rgba(0,0,0,0.5), #480000 350%), url('/static/pictures/nightcity.jpg');*/
-    /*background-position: center;*/
-    /*background-size: cover;*/
     filter: drop-shadow(4px 10px 30px darkmagenta);
 }
 
@@ -19,10 +16,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    /*border: solid 10px black;*/
-
     padding: 1em;
-    /*border: 1px solid transparent;*/
     background:
             url('/static/pictures/nightcity.jpg');
     animation: moving 10s linear infinite;
@@ -48,7 +42,6 @@
     opacity: 0.9;
     filter: drop-shadow(0 0 10px black);
     border-radius: 20px;
-    /*box-shadow: 0 0 10px black;*/
 }
 .info {
     color: #fff;
@@ -59,7 +52,6 @@
 
 .info p{
     font-size: 1vw;
-    /*margin: 10px 0 60px;*/
 }
 
 .info h2 {

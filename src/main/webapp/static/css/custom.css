@@ -84,7 +84,6 @@
 
 html,
 body {
-    /*background-image: linear-gradient(0deg, #36295e, #1c1045);*/
     background-image: url("/static/pictures/purple_bg2.jpg");
     background-size: auto;
     -ms-overflow-style: none;  /* IE and Edge */
@@ -97,18 +96,12 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
 
 .outer-ring {
     position: absolute;
+    top: calc(50% - 300px);
     left: calc(50% - 150px);
-    /*left: calc(50% - 15vw);*/
     height: 260px;
     width: 260px;
-
-    /*height: 43.25vw;*/
-    /*width: 43.25vw;*/
-
     background-image: linear-gradient(135deg, #FEED07 0%, #FE6A50 5%, #ED00AA 15%, #2FE3FE 50%, #8900FF 100%);
     border-radius: 50%;
-
-    /*  Rotate  */
     animation-duration: 3s;
     animation-name: rotate;
     animation-iteration-count: infinite;
@@ -117,15 +110,9 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
 .inner-ring {
     position: absolute;
     left: calc(50% - 140px);
-    /*left: calc(50% - 14.3vw);*/
     height: 240px;
     width: 240px;
-
-    /*height: 40vw;*/
-    /*width: 40vw;*/
-
     opacity: 0.95;
-    /*background-image: linear-gradient(0deg, black, black);*/
     background-image: url("/static/pictures/girl.jpg");
     background-size: auto;
     border-radius: 50%;
