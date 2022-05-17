@@ -4,13 +4,21 @@ import com.codecool.shop.dao.CartDao;
 import com.codecool.shop.model.Product;
 
 import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
 
 public class CartDaoMem {
 
     static HashMap<Product, Integer> cart = new HashMap<>();
 
-    static public void add(Product product, Integer quantity) {
-        cart.put(product, quantity);
+    static public void add(Product product) {
+        if(cart.containsKey(product)){
+            cart.replace(product, cart.get(product) + 1);
+        } else {
+            cart.put(product, 1);
+        }
+        System.out.println(cart);
+
     }
 
     static public void remove(Product product) {
