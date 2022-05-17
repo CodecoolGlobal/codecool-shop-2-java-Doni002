@@ -18,11 +18,15 @@ import java.math.BigDecimal;
 @WebListener
 public class Initializer implements ServletContextListener {
 
+    public static ProductDao productDataStore;
+    public static ProductCategoryDao productCategoryDataStore;
+    public static SupplierDao supplierDataStore;
+
     @Override
     public void contextInitialized(ServletContextEvent sce) {
-        ProductDao productDataStore = ProductDaoMem.getInstance();
-        ProductCategoryDao productCategoryDataStore = ProductCategoryDaoMem.getInstance();
-        SupplierDao supplierDataStore = SupplierDaoMem.getInstance();
+        productDataStore = ProductDaoMem.getInstance();
+        productCategoryDataStore = ProductCategoryDaoMem.getInstance();
+        supplierDataStore = SupplierDaoMem.getInstance();
 
         //setting up a new supplier
         Supplier rayField = new Supplier("Rayfield", "German multinational corporate manufacturer of luxury vehicles");
