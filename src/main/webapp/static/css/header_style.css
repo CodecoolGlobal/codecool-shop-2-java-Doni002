@@ -71,6 +71,10 @@ header {
 
 /*}*/
 
+.option {
+  background-color: violet;
+}
+
 .button {
   border-radius: 4px;
   background: linear-gradient(150deg, #072c94, #93c8c4, #2c2e3b);
