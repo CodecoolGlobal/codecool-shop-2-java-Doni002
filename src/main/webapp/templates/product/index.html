@@ -26,11 +26,15 @@
     <!-- End of Bootstrap components -->
 
     <script src="https://unpkg.com/wavesurfer.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/static/css/custom.css" />
     <script src='/static/js/main.js' defer></script>
+
+    <link rel="stylesheet" type="text/css" href="/static/css/custom.css" />
     <link rel="stylesheet" type="text/css" href="/static/css/header_style.css" />
     <link rel="stylesheet" type="text/css" href="/static/css/music_player_style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet">
 
 </head>
 
@@ -43,8 +47,11 @@
 <header>
     <a class="logo" href="/"><img src="/static/pictures/VibeHub_Logo.png" alt="logo"></a>
     <label class="label" for="cars">Choose a category:</label>
-    <select class ="button" style="background-image: linear-gradient(to right, violet 0%, darkblue  51%, violet  100%" name="cars" id="cars">
-        <option class="option" value="category">Car Type</option>
+    <select class ="button" style="background-image: linear-gradient(to right, violet 0%, darkblue  51%, violet  100%)" name="cars" id="cars">
+        <option class="option" value="hyperCar">Hypercars</option>
+        <option class="option" value="motorCycle">Motorcycles</option>
+        <option class="option" value="sports">Sports</option>
+        <option class="option" value="economy">Economy</option>
     </select>
     <a style="text-decoration: none" href = "https://www.cyberpunk.net/en/news/"><button class ="button"><span>News </span></button></a>
     <a style="text-decoration: none" href = "https://codecool.com/hu/rolunk-kapcsolat/"><button class ="button"><span>About </span></button></a>
@@ -65,7 +72,7 @@
                 <div class="card-header">
                     <h4 class="card-title" th:text="${prod.name}">Product name</h4>
                 </div>
-                <div class="card-content">
+                <div class="card-content" style="text-align: justify; text-justify: inter-word; font-family: 'Orbitron', sans-serif;">
                     <p class="card-text" th:text="${prod.description}">Product description... </p>
                 </div>
                 <div class="card-body">

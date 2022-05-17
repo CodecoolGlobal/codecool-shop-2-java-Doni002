@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: 'poppins', sans-serif;
+    font-family: 'Orbitron', sans-serif;
 }
 
 .music_player {
@@ -35,7 +35,8 @@
 }
 
 .music {
-    width: 60%;
+    height: 30vw;
+    width: 70vw;
     padding: 3%;
     box-sizing: border-box;
     background: #000;
@@ -70,7 +71,6 @@
 
 a {
     font: 1.50em black;
-    font-family: "poppins", sans-serif;
     background: gray;
     display: flex;
     border-radius: 20px;
