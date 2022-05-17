@@ -17,8 +17,6 @@ public class CartDaoMem {
         } else {
             cart.put(product, 1);
         }
-        System.out.println(cart);
-
     }
 
     static public void remove(Product product) {
