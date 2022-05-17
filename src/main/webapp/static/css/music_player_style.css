@@ -8,9 +8,10 @@
     background-image: linear-gradient(rgba(0,0,0,0.5), #480000 350%), url('/static/pictures/nightcity.jpg');
     background-position: center;
     background-size: cover;
+    filter: drop-shadow(0 -6px 5px black);
 }
 
-.hero {
+.background {
     width: 100%;
     height: 70vh;
     display: flex;
@@ -19,7 +20,8 @@
 }
 
 .music img {
-    width: 30em;
+    width: calc(2 / 4 * 100%);
+
 }
 
 .music {

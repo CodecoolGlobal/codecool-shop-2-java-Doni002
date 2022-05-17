@@ -10,6 +10,7 @@ header {
   align-items: center;
   padding: 30px 10%;
   background-color: black;
+  filter: drop-shadow(0 6px 5px white);
 }
 
 .cta {background-image: linear-gradient(to right, violet 0%, darkblue  51%, violet  100%)}
