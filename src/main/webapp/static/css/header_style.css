@@ -169,7 +169,7 @@ header {
   }
 }
 
-@media only screen and (max-width: 1010px) {
+@media only screen and (max-width: 1105px) {
   .nav {
     flex-direction: column;
   }

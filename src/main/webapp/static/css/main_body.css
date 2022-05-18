@@ -201,27 +201,27 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
 }
 
 @media only screen and (max-width: 600px) {
-.outer-ring {
-    /*height: 260px;*/
-    /*width: 260px;*/
-    /*top: calc(50% - 295px);*/
-    /*left: calc(50% - 150px);*/
+    .outer-ring {
+        /*height: 260px;*/
+        /*width: 260px;*/
+        /*top: calc(50% - 295px);*/
+        /*left: calc(50% - 150px);*/
 
-    top: calc(50% - 73.75vw);
-    left: calc(50% - 37.5vw);
-    height: 65vw;
-    width: 65vw;
-}
+        top: calc(50% - 73.75vw);
+        left: calc(50% - 37.5vw);
+        height: 65vw;
+        width: 65vw;
+    }
 
-.inner-ring {
-    /*height: 240px;*/
-    /*width: 240px;*/
-    /*top: calc(50% - 275px);*/
-    /*left: calc(50% - 140px);*/
+    .inner-ring {
+        /*height: 240px;*/
+        /*width: 240px;*/
+        /*top: calc(50% - 275px);*/
+        /*left: calc(50% - 140px);*/
 
-    top: calc(50% - 68.75vw);
-    left: calc(50% - 35vw);
-    height: 60vw;
-    width: 60vw;
-}
+        top: calc(50% - 68.75vw);
+        left: calc(50% - 35vw);
+        height: 60vw;
+        width: 60vw;
+    }
 }
