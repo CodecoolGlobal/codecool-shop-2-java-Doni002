@@ -14,12 +14,14 @@
     background: white;
 }
 
+/*Original navbar size*/
 @media only screen and (max-width: 1700px) {
     #cartReviewModal {
         top: 16vw;
     }
 }
 
+/*First navbar transformation*/
 @media only screen and (max-width: 1630px) {
     #cartReviewModal {
         top: 30vw;
@@ -43,8 +45,7 @@
         top: 37vw;
     }
 }
-/* Third navbar transformation */
-
+/* Second navbar transformation */
 @media only screen and (max-width: 1200px) {
     #cartReviewModal {
         top: 62vw;
