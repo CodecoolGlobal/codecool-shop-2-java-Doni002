@@ -1,0 +1,81 @@
+.checkoutProductContainer {
+    border-bottom: 5px solid black;
+    /*background-color: white;*/
+}
+
+#cartReviewModal{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: 10;
+    width: 70vw;
+    top: 15vw;
+    left: 15.25vw;
+    background: white;
+}
+
+@media only screen and (max-width: 1300px) {
+    #cartReviewModal {
+        top: 17vw;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    #cartReviewModal {
+        top: 19vw;
+    }
+}
+
+@media only screen and (max-width: 1050px) {
+    #cartReviewModal {
+        top: 22vw;
+    }
+}
+
+@media only screen and (max-width: 1010px) {
+    #cartReviewModal {
+        top: 50vw;
+    }
+}
+
+@media only screen and (max-width: 990px) {
+    #cartReviewModal {
+        top: 50vw;
+    }
+}
+
+@media only screen and (max-width: 950px) {
+    #cartReviewModal {
+        top: 52vw;
+    }
+}
+
+@media only screen and (max-width: 850px) {
+    #cartReviewModal {
+        top: 55vw;
+    }
+}
+
+@media only screen and (max-width: 850px) {
+    #cartReviewModal {
+        top: 55vw;
+    }
+}
+
+@media only screen and (max-width: 770px) {
+    #cartReviewModal {
+        top: 58vw;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    #cartReviewModal {
+        top: 62vw;
+    }
+}
+
+@media only screen and (max-width: 605px) {
+    #cartReviewModal {
+        top: 69vw;
+    }
+}
