@@ -36,6 +36,7 @@ function createModalForReviewCart(){
     <div id="cartReviewModal">
         ${orderData}
         <p id="cartReviewTotalPrice">total price: ${totalPrice}$</p>
+        <button></button>
     </div>
     `
 }

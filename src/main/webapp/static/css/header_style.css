@@ -18,7 +18,7 @@ header {
 .cta {background-image: linear-gradient(to right, violet 0%, darkblue  51%, violet  100%)}
 .cta {
   margin: 1vw;
-  padding: 1vw 2vw;
+  padding: 0.5vw 1vw;
   text-align: center;
   text-transform: uppercase;
   transition: 0.5s;
@@ -35,7 +35,6 @@ header {
   text-decoration: none;
 }
 
-
 .logo {
   cursor: pointer;
   background-color: black;
@@ -51,12 +50,12 @@ header {
 }
 
 .option {
-  background-color: violet;
+  background-color: black;
 }
 
 .button, .span {
   border-radius: 4px;
-  background: linear-gradient(150deg, #072c94, #93c8c4, #2c2e3b);
+  /*background: linear-gradient(150deg, #072c94, #93c8c4, #2c2e3b);*/
   border: solid 1px whitesmoke;
   color: #FFFFFF;
   text-align: center;
@@ -94,6 +93,20 @@ header {
 .logo {
   margin: 1vw;
   padding-right: 5vw;
+}
+
+.cart {
+  background: linear-gradient(150deg, #072c94, #93c8c4, #2c2e3b);
+  border: solid 1px whitesmoke;"
+}
+
+
+#cart:hover {
+  margin: 1vw;
+  padding: 1vw 2vw;
+  font-size: 2vw;
+  border-radius: 20px;
+  background: linear-gradient(112.4deg, rgb(169, 28, 115) 21.6%, rgb(219, 112, 54) 92.2%);
 }
 
 /* Mobile Nav */
