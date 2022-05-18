@@ -10,11 +10,42 @@ function initAddEventListener(){
 
 function reviewCart(){
     displayReviewCartModal();
+    console.log(cart)
 }
 
 function displayReviewCartModal(){
     let reviewCartModalHtml = createModalForReviewCart()
-    document.body.innerHTML += reviewCartModalHtml;
+    createModalContainer();
+    createBlurBackground();
+    initCloseOnClickBackground()
+    document.querySelector(".modalContainer").innerHTML += reviewCartModalHtml;
+    initCloseModal();
+}
+
+function initCloseOnClickBackground(){
+    document.querySelector(".bluredBackground").addEventListener("click", closeModal)
+}
+
+function createModalContainer(){
+    let modalContainer = document.createElement("div");
+    modalContainer.classList.add("modalContainer");
+    document.body.append(modalContainer);
+}
+
+function initCloseModal(){
+    document.querySelector(".close").addEventListener("click", closeModal)
+}
+
+function closeModal(){
+    document.querySelector("#cartReviewModal").remove();
+    document.querySelector(".modalContainer").remove();
+    document.querySelector(".bluredBackground").remove();
+}
+
+function createBlurBackground(){
+    let bluredBackground = document.createElement("div");
+    bluredBackground.classList.add("bluredBackground")
+    document.body.append(bluredBackground);
 }
 
 function createModalForReviewCart(){
@@ -23,7 +54,6 @@ function createModalForReviewCart(){
     for (let product of cart){
         orderData += `
         <div class="checkoutProductContainer">
-            <span class="close">&times;</span>
             <img src="/static/img/product_${product['id']}.jpg" alt="" width="210" height="75">
             <p>product: ${product['name']}</p>
             <p>price: ${product['price']}$</p>
@@ -35,6 +65,7 @@ function createModalForReviewCart(){
 
     return `
     <div id="cartReviewModal">
+    <span class="close">X</span>
         ${orderData}
         <p id="cartReviewTotalPrice">total price: ${totalPrice}$</p>
         <button>Proceed to Checkout</button>
