@@ -100,13 +100,55 @@ header {
   border: solid 1px whitesmoke;"
 }
 
-
 #cart:hover {
   margin: 1vw;
   padding: 1vw 2vw;
   font-size: 2vw;
   border-radius: 20px;
   background: linear-gradient(112.4deg, rgb(169, 28, 115) 21.6%, rgb(219, 112, 54) 92.2%);
+}
+
+#car{
+  animation: bike 1s ease-in-out infinite alternate;
+}
+
+@keyframes bike {
+  from {
+    transform: translateY(0%);
+  }
+  to {
+    transform: translateY(2.5%);
+  }
+}
+
+#firstwheel, #lastwheel{
+  animation: wheel 2s infinite linear;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+#Vector_20, #Vector_21 {
+  animation: dollar_logo 2s infinite linear;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+@keyframes dollar_logo {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+@keyframes wheel {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
 }
 
 /* Mobile Nav */
