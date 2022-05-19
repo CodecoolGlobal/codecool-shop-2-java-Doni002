@@ -69,10 +69,14 @@ function createModalForReviewCart(){
 
     return `
     <div id="cartReviewModal">
-    <span class="close">&times;</span>
+        <div class="closeContainer">
+            <span class="close">&times;</span>
+        </div>
         ${orderData}
         <p id="cartReviewTotalPrice">total price: ${totalPrice}$</p>
-        <button id="toCheckoutButton">Proceed to Checkout</button>
+        <div class="buttonContainer">
+            <button id="toCheckoutButton" class="cta" >Proceed to Checkout</button>
+        </div>
     </div>
     `
 }

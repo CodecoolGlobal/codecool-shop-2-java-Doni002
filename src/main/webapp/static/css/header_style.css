@@ -40,15 +40,6 @@ header {
   background-color: black;
 }
 
-.cta,
-.overlay__content a {
-  font-weight: 500;
-
-  color: whitesmoke;
-  background-color: black;
-  text-decoration: none;
-}
-
 .option {
   background-color: black;
 }
