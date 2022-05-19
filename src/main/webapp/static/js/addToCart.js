@@ -34,6 +34,7 @@ async function getFetchedProduct(url){
     return response.json();
 }
 
+
 async function sendProductIdToBackEnd(productId){
     return await getFetchedProduct("/cart/add?productId=" + productId);
 }

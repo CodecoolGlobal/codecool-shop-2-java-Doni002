@@ -3,11 +3,28 @@
     /*background-color: white;*/
 }
 
+#deliveryModal > label > input{
+    position: absolute;
+    left: 20%;
+}
+
+
+#deliveryModal{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: 2;
+    width: 40vw;
+    top: 15vw;
+    left: 30vw;
+    background: white;
+}
+
 #cartReviewModal{
     display: flex;
     flex-direction: column;
     position: absolute;
-    z-index: 10;
+    z-index: 2;
     width: 70vw;
     top: 15vw;
     left: 15.25vw;
