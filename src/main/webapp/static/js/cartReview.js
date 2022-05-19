@@ -62,7 +62,7 @@ function createModalForReviewCart(){
                 <p>price: ${product['price']}$</p>
                 <p>quantity: ${product['quantity']}</p>
             </div>
-        </div>checkoutProductContainer
+        </div>
         `
         totalPrice += product['price'] * product['quantity'];
     }
