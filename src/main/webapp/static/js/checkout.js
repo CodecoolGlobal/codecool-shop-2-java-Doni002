@@ -1,5 +1,6 @@
 import {cart} from '/static/js/addToCart.js;'
 import {closeDeliveryModal} from "./deliveryModal.js";
+import {initPayButton} from "./afterPurchase.js";
 
 export function initToCheckoutButton(){
     document.querySelector("#toCheckoutButton").addEventListener("click", initCheckout);
@@ -9,19 +10,9 @@ function initCheckout(){
     closeDeliveryModalWithoutBackground();
     removePreviousEventListeners();
     createCheckoutModalContainer();
-    createCheckoutModalContainer();
     document.querySelector(".checkoutModalContainer").innerHTML = createDeliveryModal();
     initCloseModal();
-    initCheckoutButton();
-}
-
-function initCheckoutButton(){
-    document.querySelector("#checkoutButton").addEventListener("click", pay);
-}
-
-function pay(){
-    closeCheckoutModal();
-
+    initPayButton();
 }
 
 function closeDeliveryModalWithoutBackground(){

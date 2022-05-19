@@ -36,9 +36,20 @@
     filter: drop-shadow(3px 3px 5px white);
 }
 
-#deliveryModal > label > input{
+#deliveryModal > label > input {
     position: absolute;
     left: 20%;
+}
+
+#paidModal{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: 2;
+    width: 40vw;
+    top: 15vw;
+    left: 30vw;
+    background: white;
 }
 
 
