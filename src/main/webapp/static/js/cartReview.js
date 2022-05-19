@@ -1,5 +1,5 @@
 import {cart} from '/static/js/addToCart.js;'
-import {initToCheckoutButton} from '/static/js/deliveryModal.js'
+import {initToDeliveryButton} from '/static/js/deliveryModal.js'
 
 function init(){
     initAddEventListener();
@@ -20,7 +20,7 @@ function displayReviewCartModal(){
     initCloseOnClickBackground()
     document.querySelector(".modalContainer").innerHTML += reviewCartModalHtml;
     initCloseModal();
-    initToCheckoutButton();
+    initToDeliveryButton();
 }
 
 export function initCloseOnClickBackground(){
@@ -75,7 +75,7 @@ function createModalForReviewCart(){
         ${orderData}
         <p id="cartReviewTotalPrice">total price: ${totalPrice}$</p>
         <div class="buttonContainer">
-            <button id="toCheckoutButton" class="cta" >Proceed to Checkout</button>
+            <button id="toDeliveryButton" class="cta" >Proceed to Checkout</button>
         </div>
     </div>
     `

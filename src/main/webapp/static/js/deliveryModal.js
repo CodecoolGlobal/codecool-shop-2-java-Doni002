@@ -1,11 +1,8 @@
-import {cart} from '/static/js/addToCart.js;'
 import {closeReviewModal} from '/static/js/cartReview.js'
+import {initToCheckoutButton} from '/static/js/checkout.js'
 
-
-
-
-export function initToCheckoutButton(){
-    document.querySelector("#toCheckoutButton").addEventListener("click", toDelivery);
+export function initToDeliveryButton(){
+    document.querySelector("#toDeliveryButton").addEventListener("click", toDelivery);
 }
 
 function toDelivery(){
@@ -14,6 +11,7 @@ function toDelivery(){
     createDeliveryModalContainer();
     document.querySelector(".deliveryModalContainer").innerHTML = (createDeliveryModal());
     initCloseModal();
+    initToCheckoutButton();
 }
 
 function initCloseModal(){
@@ -21,9 +19,7 @@ function initCloseModal(){
     document.querySelector(".close").addEventListener("click", closeDeliveryModal);
 }
 
-
-
-function closeDeliveryModal(){
+export function closeDeliveryModal(){
     document.querySelector(".deliveryModalContainer").remove();
     document.querySelector(".bluredBackground").remove();
 }
@@ -66,7 +62,7 @@ function createDeliveryModal(){
         <label>Street:
         <input id="street" type="text">
         </label>
-        <button id="deliveryContinueButton">Continue</button>
+        <button id="toCheckoutButton">Continue</button>
     </form>
     `
     return orderData;
