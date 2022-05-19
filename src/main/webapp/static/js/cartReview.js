@@ -72,10 +72,11 @@ function createModalForReviewCart(){
         <div class="closeContainer">
             <span class="close">&times;</span>
         </div>
+        <p class="modalMessage">Your Cart:</p>
         ${orderData}
-        <p id="cartReviewTotalPrice">total price: ${totalPrice}$</p>
+        <p id="cartReviewTotalPrice">Total Price: ${totalPrice}$</p>
         <div class="buttonContainer">
-            <button id="toDeliveryButton" class="cta" >Proceed to Checkout</button>
+            <button style="background-image: linear-gradient(to right, rgb(169, 28, 115) 0%, rgb(219, 112, 54) 51%, rgb(169, 28, 115) 100%)" id="toDeliveryButton" class="cta" >Proceed to Checkout</button>
         </div>
     </div>
     `

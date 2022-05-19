@@ -18,7 +18,7 @@
     justify-content: center;
     padding: 1em;
     background:
-            url('/static/pictures/nightcity.jpg');
+            url('/static/pictures/musicplayer_bg_nightcity.jpg');
     animation: moving 10s linear infinite;
     animation-direction: alternate-reverse;
     border-top: inset 5px purple;
