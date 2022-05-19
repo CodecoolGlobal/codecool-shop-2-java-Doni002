@@ -97,10 +97,11 @@ header {
 
 .cart {
   background: linear-gradient(150deg, #072c94, #93c8c4, #2c2e3b);
-  border: solid 1px whitesmoke;"
+  border: solid 1px whitesmoke;
+  transition: 0.3s;
 }
 
-#cart:hover {
+.cart:hover {
   margin: 0.5vw;
   padding: 0.5vw 1vw;
   font-size: 2vw;
@@ -109,15 +110,15 @@ header {
 }
 
 #car{
-  animation: bike 1s ease-in-out infinite alternate;
+  animation: car 1s ease-in-out infinite alternate;
 }
 
-@keyframes bike {
+@keyframes car {
   from {
     transform: translateY(0%);
   }
   to {
-    transform: translateY(2.5%);
+    transform: translateY(5%);
   }
 }
 
