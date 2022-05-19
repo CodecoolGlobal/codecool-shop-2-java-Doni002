@@ -30,9 +30,17 @@
     filter: drop-shadow(3px 3px 5px white);
 }
 
+.modalMessage {
+    font-size: 4vw;
+    color: white;
+    filter: drop-shadow(3px 3px 5px white);
+    margin: auto;
+}
+
 #cartReviewTotalPrice{
     margin: auto;
     color: white;
+    font-size: 3vw;
     filter: drop-shadow(3px 3px 5px white);
 }
 
