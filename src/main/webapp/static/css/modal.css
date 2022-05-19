@@ -37,28 +37,24 @@
     margin: auto;
 }
 
+.form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 1vw;
+    filter: drop-shadow(3px 3px 5px white);
+    color: white;
+}
+
+label > input[type=text]::placeholder {
+    font: 20px/3 sans-serif;
+}
+
 #cartReviewTotalPrice{
     margin: auto;
     color: white;
     font-size: 3vw;
     filter: drop-shadow(3px 3px 5px white);
-}
-
-#deliveryModal > label > input{
-    position: absolute;
-    left: 20%;
-}
-
-
-#deliveryModal{
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    z-index: 2;
-    width: 40vw;
-    top: 15vw;
-    left: 30vw;
-    background: white;
 }
 
 #cartReviewModal{

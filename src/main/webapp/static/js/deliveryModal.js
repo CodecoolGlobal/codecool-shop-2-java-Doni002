@@ -46,28 +46,44 @@ function createDeliveryModalContainer(){
 function createDeliveryModal(){
     let orderData = ``;
     orderData += `
-    <form id="deliveryModal">
-    <span class="close">X</span>
-        <label>Name:
-        <input id="name" type="text">
-        </label>
-        <label>Email:
-        <input id="email" type="text">
-        </label>
-        <label>Phone:
-        <input id="phone" type="text">
-        </label>
-        <label>Country:
-        <input id="country" type="text">
-        </label>
-        <label>City:
-        <input id="city" type="text">
-        </label>
-        <label>Street:
-        <input id="street" type="text">
-        </label>
-        <button id="deliveryContinueButton">Continue</button>
-    </form>
+    <div class="cartReviewModal">
+        <form id="deliveryModal" class="form">
+            <label for="name" >Name:</label>
+            <input id="name" type="text" name="name" placeholder="Enter your name">  
+              
+            <label for="email">Email:</label>
+            <input id="email" type="text" name="email" placeholder="Enter your email">
+            
+            <label for="phone">Phone:</label>
+            <input id="phone" type="text" name="phone" placeholder="Add your phone number">
+            
+            <label for="country">Country:</label>
+            <input id="country" type="text" name="country" placeholder="Add your country">
+            
+            <label for="city">City:</label>
+            <input id="city" type="text" name="city" placeholder="Add your city"> 
+                    
+            <label for="street">Street:</label>         
+            <input id="street" type="text" name="street" placeholder="Enter city's street">
+            
+            <div class="buttonContainer">
+                <button
+                    style="background-image: linear-gradient(to right, rgb(169, 28, 115) 0%, rgb(219, 112, 54) 51%, rgb(169, 28, 115) 100%)"
+                    id="deliveryContinueButton" class="cta">Continue
+                </button>
+            </div>
+        </form>
+    </div>
     `
-    return orderData;
+
+    return `
+    <div id="cartReviewModal">
+        <div class="closeContainer">
+            <span class="close">&times;</span>
+        </div>
+        <p class="modalMessage">Your Personal Info:</p>
+        ${orderData}
+    </div>
+    `
+    ;
 }
