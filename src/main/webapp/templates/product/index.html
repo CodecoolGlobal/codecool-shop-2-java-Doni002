@@ -191,27 +191,27 @@
 
     playBtn.onclick = function(){
         wavesurfer.playPause();
-        if(playBtn.src.includes("play.png")){
-            playBtn.src = "/static/pictures/pause.png";
+        if(playBtn.src.includes("musicplayer_play.png")){
+            playBtn.src = "/static/pictures/musicplayer_pause.png";
         }else{
-            playBtn.src = "/static/pictures/play.png";
+            playBtn.src = "/static/pictures/musicplayer_play.png";
         }
     }
     stopBtn.onclick = function(){
         wavesurfer.stop();
-        playBtn.src = "/static/pictures/play.png";
+        playBtn.src = "/static/pictures/musicplayer_play.png";
     }
     volumeBtn.onclick = function(){
         wavesurfer.toggleMute();
-        if(volumeBtn.src.includes("volume.png")){
-            volumeBtn.src = "/static/pictures/mute.png";
+        if(volumeBtn.src.includes("musicplayer_volume.png")){
+            volumeBtn.src = "/static/pictures/musicplayer_mute.png";
         }else{
-            volumeBtn.src = "/static/pictures/volume.png";
+            volumeBtn.src = "/static/pictures/musicplayer_volume.png";
         }
     }
     wavesurfer.on('finish', function()  {
         wavesurfer.params.container.style.opacity = 0.9;
-        playBtn.src = "/static/pictures/play.png";
+        playBtn.src = "/static/pictures/musicplayer_play.png";
         wavesurfer.stop();
     });
 
