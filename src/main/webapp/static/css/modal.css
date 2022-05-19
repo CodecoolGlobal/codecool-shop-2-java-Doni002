@@ -46,15 +46,20 @@
     color: white;
 }
 
-label > input[type=text]::placeholder {
-    font: 20px/3 sans-serif;
+label {
+    padding: 1vw;
 }
 
-#cartReviewTotalPrice{
+.totalPrice {
     margin: auto;
     color: white;
     font-size: 3vw;
-    filter: drop-shadow(3px 3px 5px white);
+    padding: 15px;
+}
+
+#paidModal {
+    display: flex;
+    flex-direction: row-reverse;
 }
 
 #cartReviewModal{
@@ -75,7 +80,9 @@ label > input[type=text]::placeholder {
 .buttonContainer {
     display: flex;
     justify-content: space-around;
-    padding: 5px;}
+    padding: 5px;
+    margin: 1vw;
+}
 
 .close{
     right: 3vw;
@@ -87,7 +94,6 @@ label > input[type=text]::placeholder {
 .close:hover {
     color: white;
 }
-
 
 .bluredBackground{
     position: fixed;

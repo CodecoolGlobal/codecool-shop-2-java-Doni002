@@ -74,7 +74,7 @@ function createModalForReviewCart(){
         </div>
         <p class="modalMessage">Your Cart:</p>
         ${orderData}
-        <p id="cartReviewTotalPrice">Total Price: ${totalPrice}$</p>
+        <p style="filter: drop-shadow(3px 3px 5px white);" class="totalPrice">Total Price: ${totalPrice}$</p>
         <div class="buttonContainer">
             <button style="background-image: linear-gradient(to right, rgb(169, 28, 115) 0%, rgb(219, 112, 54) 51%, rgb(169, 28, 115) 100%)" id="toDeliveryButton" class="cta" >Proceed to Checkout</button>
         </div>

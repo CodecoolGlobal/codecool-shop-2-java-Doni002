@@ -42,34 +42,32 @@ function createDeliveryModalContainer(){
 function createDeliveryModal(){
     let orderData = ``;
     orderData += `
-    <div class="cartReviewModal">
         <form id="deliveryModal" class="form">
-            <label for="name" >Name:</label>
-            <input id="name" type="text" name="name" placeholder="Enter your name">  
+            <label for="name">Name:</label>
+            <input id="name" type="text" name="name" placeholder="Enter your name" required>  
               
             <label for="email">Email:</label>
-            <input id="email" type="text" name="email" placeholder="Enter your email">
+            <input id="email" type="text" name="email" placeholder="Enter your email" required>
             
             <label for="phone">Phone:</label>
-            <input id="phone" type="text" name="phone" placeholder="Add your phone number">
+            <input id="phone" type="text" name="phone" placeholder="Add your phone number" required>
             
             <label for="country">Country:</label>
-            <input id="country" type="text" name="country" placeholder="Add your country">
+            <input id="country" type="text" name="country" placeholder="Add your country" required>
             
             <label for="city">City:</label>
-            <input id="city" type="text" name="city" placeholder="Add your city"> 
+            <input id="city" type="text" name="city" placeholder="Add your city" required> 
                     
             <label for="street">Street:</label>         
-            <input id="street" type="text" name="street" placeholder="Enter city's street">
+            <input id="street" type="text" name="street" placeholder="Enter city's street" required>
             
             <div class="buttonContainer">
                 <button
                     style="background-image: linear-gradient(to right, rgb(169, 28, 115) 0%, rgb(219, 112, 54) 51%, rgb(169, 28, 115) 100%)"
-                    id="deliveryContinueButton" class="cta">Continue
+                    id="toCheckoutButton" class="cta">Continue
                 </button>
             </div>
         </form>
-    </div>
     `
 
     return `

@@ -50,27 +50,39 @@ function calculateTotalPrice(){
 function createDeliveryModal(){
     let orderData = ``;
     orderData += `
-    <form id="deliveryModal">
-    <span class="close">X</span>
-        <label>Card Number:
-            <input id="cardNumber" type="number">
-        </label>
-        <label>CVV:
-            <input id="cvv" type="number">
-        </label>
-        <p>Expire Date: </p>
-        <label>
-            <input id="expireYear" type="number" placeholder="year">   
-        </label>
-        <label>
-            <input id="expireMonth" type="number" placeholder="month">
-        </label>
-        <label>Name:
-            <input id="cardName" type="text">
-        </label>
-        <p>Total price: ${calculateTotalPrice()}$</p>
-        <button id="checkoutButton">Pay</button>
-    </form>
+    <div class="cartReviewModal">
+        <form id="deliveryModal" class="form">
+            <label for="cardNumber">Card Number:</label>
+            <input id="cardNumber" type="number" name="cardNumber" placeholder="Enter your card number" required>
+            
+            <label for="cvv">CVV:</label>
+            <input id="cvv" type="number" name="cvv" placeholder="Enter CVV" required>
+            
+            <label for="expireDate">Expire Date:</label>
+            <input id="expireYear" type="number" placeholder="Enter year" required>   
+            <input id="expireMonth" type="number" placeholder="Enter month" required>
+            
+            <label for="cardName">Name:</label>
+            <input id="cardName" type="text" name="cardName" placeholder="Enter name" required>
+            
+            <p class="totalPrice">Total price: ${calculateTotalPrice()}$</p>
+            <div class="buttonContainer">
+                <button
+                    style="background-image: linear-gradient(to right, rgb(169, 28, 115) 0%, rgb(219, 112, 54) 51%, rgb(169, 28, 115) 100%)"
+                    id="checkoutButton" class="cta">Pay
+                </button>
+            </div>
+        </form>
+    </div>
     `
-    return orderData;
+
+    return `
+    <div id="cartReviewModal">
+        <div class="closeContainer">
+            <span class="close">&times;</span>
+        </div>
+        <p class="modalMessage">Your Card Info:</p>
+        ${orderData}
+    </div>
+    `
 }

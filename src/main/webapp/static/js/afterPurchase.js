@@ -44,12 +44,20 @@ function orderNumberGenerator(){
 function createPaidModal(){
     let orderData = ``;
     orderData += `
-    <div id="paidModal">
-        <span class="close">X</span>
-        <p>Thank you for the purchase!</p>
-        <p>your order number is: ${orderNumberGenerator()}</p>
-        <button id="closeButton">close</button>
+    <div class="cartReviewModal" id="paidModal">
+        <p class="modalMessage">Your order number is: ${orderNumberGenerator()}</p>
+        <img style="width: 25%" src="/static/pictures/webshop_title_man_big.png" alt="Keanu Reaves says: You are breath-taking!">
+    </div>
+    <p class="modalMessage">You are breathtaking!</p>
+    `
+    return `
+    <div id="cartReviewModal">
+        <div class="closeContainer">
+            <span class="close">&times;</span>
+        </div>
+        <p class="modalMessage">Thank you for the purchase!</p>
+        ${orderData}
     </div>
     `
-    return orderData;
+    ;
 }
