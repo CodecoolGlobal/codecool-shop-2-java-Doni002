@@ -9,7 +9,7 @@ function toDelivery(){
     closeReviewModalWithoutBackground();
     removePreviousEventListeners();
     createDeliveryModalContainer();
-    document.querySelector(".deliveryModalContainer").innerHTML = (createDeliveryModal());
+    document.querySelector(".deliveryModalContainer").innerHTML = createDeliveryModal();
     initCloseModal();
     initToCheckoutButton();
 }
@@ -29,7 +29,7 @@ function removePreviousEventListeners(){
 }
 
 function closeReviewModalWithoutBackground() {
-    document.querySelector("#cartReviewModal").remove();
+    //document.querySelector("#cartReviewModal").remove();
     document.querySelector(".modalContainer").remove();
 }
 

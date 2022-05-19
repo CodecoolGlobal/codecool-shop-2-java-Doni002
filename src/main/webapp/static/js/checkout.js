@@ -10,7 +10,7 @@ function initCheckout(){
     closeDeliveryModalWithoutBackground();
     removePreviousEventListeners();
     createCheckoutModalContainer();
-    document.querySelector(".checkoutModalContainer").innerHTML = createDeliveryModal();
+    document.querySelector(".checkoutModalContainer").innerHTML = createCheckoutModal();
     initCloseModal();
     initPayButton();
 }
@@ -47,11 +47,11 @@ function calculateTotalPrice(){
     return totalPrice;
 }
 
-function createDeliveryModal(){
+function createCheckoutModal(){
     let orderData = ``;
     orderData += `
     <div class="cartReviewModal">
-        <form id="deliveryModal" class="form">
+        <form id="checkoutModal" class="form">
             <label for="cardNumber">Card Number:</label>
             <input id="cardNumber" type="number" name="cardNumber" placeholder="Enter your card number" required>
             

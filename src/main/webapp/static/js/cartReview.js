@@ -14,11 +14,10 @@ function reviewCart(){
 }
 
 function displayReviewCartModal(){
-    let reviewCartModalHtml = createModalForReviewCart()
     createModalContainer();
     createBlurBackground();
     initCloseOnClickBackground()
-    document.querySelector(".modalContainer").innerHTML += reviewCartModalHtml;
+    document.querySelector(".modalContainer").innerHTML += createModalForReviewCart();
     initCloseModal();
     initToDeliveryButton();
 }
@@ -38,7 +37,7 @@ export function initCloseModal(){
 }
 
 export function closeReviewModal(){
-    document.querySelector("#cartReviewModal").remove();
+    //document.querySelector("#cartReviewModal").remove();
     document.querySelector(".modalContainer").remove();
     document.querySelector(".bluredBackground").remove();
 }
