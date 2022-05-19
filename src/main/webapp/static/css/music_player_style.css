@@ -24,7 +24,7 @@
     border-top: inset 5px purple;
 }
 
-.music_player_body img {
+.music_player_body > img {
     width: calc(2 / 4 * 100%);
 }
 

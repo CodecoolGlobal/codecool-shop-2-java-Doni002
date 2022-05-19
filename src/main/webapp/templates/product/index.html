@@ -5,7 +5,8 @@
     <meta name="author" content="Codecool" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-    <title>Codecool Shop</title>
+    <title>VibeHub</title>
+    <link rel = "shortcut icon" type="image" href = "/static/pictures/man.png" >
 
     <!-- Bootstrap components -->
     <!-- Latest compiled and minified Jquery -->
@@ -97,7 +98,7 @@
             <a style="text-decoration: none" href = "https://codecool.com/hu/rolunk-kapcsolat/"><span class="span"><span>About</span> </span></a>
             <a class="cta" href = "https://codecool.com/hu/kapcsolat/"><span>Contact</span></a>
             <button id="cart" class="button cart">
-                cart
+                <img id="car" src="/static/pictures/car.png">
             </button>
         </div>
 
@@ -113,7 +114,7 @@
             <div class="outer-ring center"></div>
             <div class="inner-ring center"></div>
             <div class="card gradient-border card-animation" style="color: whitesmoke">
-                <img class="img" src="http://placehold.it/400x250/000/fff" th:attr="src='/static/img/product_' + ${prod.id} + '.jpg'" alt="" />
+                <img src="http://placehold.it/400x250/000/fff" th:attr="src='/static/img/product_' + ${prod.id} + '.jpg'" alt="" />
                 <div class="card-header">
                     <h4 class="card-title" th:text="${prod.name}">Product name</h4>
                 </div>
@@ -136,7 +137,7 @@
 <div class="music_player">
     <div class="background">
         <div class="music_player_body">
-            <img class="img" src="/static/pictures/badguy_crop.jpg">
+            <img src="/static/pictures/badguy_crop.jpg">
             <div class="info">
                 <h2>Cyberpunk 2077 - Chippin' In by SAMURAI (Refused)</h2>
                 <p>Music by David Sandstrom, Kristofer Steen
@@ -156,7 +157,13 @@
     </div>
 </div>
 
-<div th:replace="footer.html :: copy"></div>
+<div class="footer">
+    <div class="card" style="border: black">
+        <div class="card-body footer">
+            &copy; 2019 Tech It Easy VibeHub, Chicago
+        </div>
+    </div>
+</div>
 
 </body>
 
