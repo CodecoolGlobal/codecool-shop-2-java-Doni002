@@ -9,7 +9,7 @@ function toDelivery(){
     closeReviewModalWithoutBackground();
     removePreviousEventListeners();
     createDeliveryModalContainer();
-    document.querySelector(".deliveryModalContainer").innerHTML = (createDeliveryModal());
+    document.querySelector(".deliveryModalContainer").innerHTML = createDeliveryModal();
     initCloseModal();
     initToCheckoutButton();
 }
@@ -29,7 +29,7 @@ function removePreviousEventListeners(){
 }
 
 function closeReviewModalWithoutBackground() {
-    document.querySelector("#cartReviewModal").remove();
+    //document.querySelector("#cartReviewModal").remove();
     document.querySelector(".modalContainer").remove();
 }
 
@@ -65,7 +65,7 @@ function createDeliveryModal(){
             <div class="buttonContainer">
                 <button
                     style="background-image: linear-gradient(to right, rgb(169, 28, 115) 0%, rgb(219, 112, 54) 51%, rgb(169, 28, 115) 100%)"
-                    id="deliveryContinueButton" class="cta">Continue
+                    id="toCheckoutButton" class="cta">Continue
                 </button>
             </div>
         </form>
