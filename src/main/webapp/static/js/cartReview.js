@@ -56,10 +56,12 @@ function createModalForReviewCart(){
     for (let product of cart){
         orderData += `
         <div class="checkoutProductContainer">
-            <img src="/static/img/product_${product['id']}.jpg" alt="" width="210" height="75">
-            <p>product: ${product['name']}</p>
-            <p>price: ${product['price']}$</p>
-            <p>quantity: ${product['quantity']}</p>
+            <div class="checkoutProductContainerElements">
+                <img src="/static/img/product_${product['id']}.jpg" alt="" width="210" height="75">
+                <p>product: ${product['name']}</p>
+                <p>price: ${product['price']}$</p>
+                <p>quantity: ${product['quantity']}</p>
+            </div>
         </div>
         `
         totalPrice += product['price'] * product['quantity'];

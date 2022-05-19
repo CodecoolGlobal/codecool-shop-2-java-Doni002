@@ -1,7 +1,21 @@
 .checkoutProductContainer {
-    border-bottom: 5px solid black;
-    /*background-color: white;*/
+    border: 5px solid black;
+    padding: 3vw;
+    margin: 1vw;
 }
+
+.checkoutProductContainerElements > img{
+    margin: 0.5vw;
+}
+
+.checkoutProductContainerElements > p {
+    margin: 0.5vw;
+}
+
+.checkoutProductContainerElements{
+    display: flex;
+
+    align-items: center;}
 
 #deliveryModal > label > input{
     position: absolute;
@@ -29,11 +43,16 @@
     top: 15vw;
     left: 15.25vw;
     background: white;
+    padding: 1vw;
+    max-height: calc(100vh - 1vw);
+    overflow-y: auto;
 }
 
 .close{
     position: absolute;
-    right: 1px;
+    right: 3vw;
+    top : 2vw;
+    font-size: 5vw;
 }
 
 .bluredBackground{
@@ -42,20 +61,12 @@
     right:0;
     bottom:0;
     left:0;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.7);
 }
 
 /*!* The Modal (background) *!*/
 /*.modal {*/
-/*    display: none; !* Hidden by default *!*/
-/*    position: fixed; !* Stay in place *!*/
-/*    z-index: 1; !* Sit on top *!*/
 /*    padding-top: 100px; !* Location of the box *!*/
-/*    left: 0;*/
-/*    top: 0;*/
-/*    width: 100%; !* Full width *!*/
-/*    height: 100%; !* Full height *!*/
-/*    overflow: auto; !* Enable scroll if needed *!*/
 /*    background-color: rgb(0,0,0); !* Fallback color *!*/
 /*    background-color: rgba(0,0,0,0.4); !* Black w/ opacity *!*/
 /*}*/

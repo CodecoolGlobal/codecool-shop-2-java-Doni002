@@ -166,7 +166,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
     animation-name: animate-fade, slidein;
 }
 
-.img {
+.card > img {
     border: solid 2px green;
     filter: drop-shadow(-4px 5px 10px black);
 }
