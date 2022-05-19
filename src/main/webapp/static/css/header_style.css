@@ -100,7 +100,8 @@ header {
   background: linear-gradient(112.4deg, rgb(169, 28, 115) 21.6%, rgb(219, 112, 54) 92.2%);
 }
 
-#car{
+#car,
+.keanuReaves {
   animation: car 1s ease-in-out infinite alternate;
 }
 

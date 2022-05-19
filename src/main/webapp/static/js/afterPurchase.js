@@ -46,7 +46,7 @@ function createPaidModal(){
     orderData += `
     <div class="cartReviewModal" id="paidModal">
         <p class="modalMessage">Your order number is: ${orderNumberGenerator()}</p>
-        <img style="width: 25%" src="/static/pictures/webshop_title_man_big.png" alt="Keanu Reaves says: You are breath-taking!">
+        <img class="keanuReaves" style="width: 25%" src="/static/pictures/webshop_title_man_big.png" alt="Keanu Reaves says: You are breath-taking!">
     </div>
     <p class="modalMessage">You are breathtaking!</p>
     `
