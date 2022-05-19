@@ -10,12 +10,12 @@
 .checkoutProductContainer {
     padding: 3vw;
     margin: 1vw;
-    background: linear-gradient(112.4deg, rgb(169, 28, 115) 21.6%, rgb(219, 112, 54) 92.2%);
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
 }
 
 .checkoutProductContainerElements > img{
     margin: 0.5vw;
-    border: solid 3px orange;
+    border: solid 3px #23a6d5;
     filter: drop-shadow(0 6px 5px white);
 }
 
