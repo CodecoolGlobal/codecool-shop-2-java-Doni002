@@ -1,4 +1,5 @@
 import {cart} from '/static/js/addToCart.js;'
+import {initToCheckoutButton} from '/static/js/deliveryModal.js'
 
 function init(){
     initAddEventListener();
@@ -10,7 +11,6 @@ function initAddEventListener(){
 
 function reviewCart(){
     displayReviewCartModal();
-    console.log(cart)
 }
 
 function displayReviewCartModal(){
@@ -20,10 +20,11 @@ function displayReviewCartModal(){
     initCloseOnClickBackground()
     document.querySelector(".modalContainer").innerHTML += reviewCartModalHtml;
     initCloseModal();
+    initToCheckoutButton();
 }
 
-function initCloseOnClickBackground(){
-    document.querySelector(".bluredBackground").addEventListener("click", closeModal)
+export function initCloseOnClickBackground(){
+    document.querySelector(".bluredBackground").addEventListener("click", closeReviewModal)
 }
 
 function createModalContainer(){
@@ -32,11 +33,11 @@ function createModalContainer(){
     document.body.append(modalContainer);
 }
 
-function initCloseModal(){
-    document.querySelector(".close").addEventListener("click", closeModal)
+export function initCloseModal(){
+    document.querySelector(".close").addEventListener("click", closeReviewModal)
 }
 
-function closeModal(){
+export function closeReviewModal(){
     document.querySelector("#cartReviewModal").remove();
     document.querySelector(".modalContainer").remove();
     document.querySelector(".bluredBackground").remove();
@@ -47,6 +48,7 @@ function createBlurBackground(){
     bluredBackground.classList.add("bluredBackground")
     document.body.append(bluredBackground);
 }
+
 
 function createModalForReviewCart(){
     let orderData = ``;
@@ -68,7 +70,7 @@ function createModalForReviewCart(){
     <span class="close">X</span>
         ${orderData}
         <p id="cartReviewTotalPrice">total price: ${totalPrice}$</p>
-        <button>Proceed to Checkout</button>
+        <button id="toCheckoutButton">Proceed to Checkout</button>
     </div>
     `
 }
