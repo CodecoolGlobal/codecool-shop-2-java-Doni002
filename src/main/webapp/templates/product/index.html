@@ -27,6 +27,7 @@
     <!-- End of Bootstrap components -->
 
     <script src="https://unpkg.com/wavesurfer.js"></script>
+    <script src='/static/js/smoothSrollingEffect.js' type="module" defer></script>
     <script src='/static/js/addToCart.js' type="module" defer></script>
     <script src='/static/js/cartReview.js' type="module" defer></script>
     <script src='/static/js/deliveryModal.js' type="module" defer></script>
@@ -126,7 +127,7 @@
                         <p class="lead" th:text="${prod.getPrice()}">100 USD</p>
                     </div>
                     <div class="card-text">
-                        <a class="btn btn-success"  th:productId="${prod.id}">Add to cart</a>
+                        <a class="btn btn-success push-down" th:productId="${prod.id}">Add to cart</a>
                     </div>
                 </div>
             </div>

@@ -88,6 +88,7 @@ body {
     background-size: auto;
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none; /* Firefox */
+    scroll-behavior: smooth;
 }
 
 html::-webkit-scrollbar, body::-webkit-scrollbar {
@@ -198,6 +199,19 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
     font-family: 'Orbitron', sans-serif;
     text-align: center;
     justify-content: center;
+}
+
+.push-down {
+    background-color: #04AA6D;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 6px #999;
+}
+
+.push-down:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
 }
 
 @media only screen and (max-width: 600px) {
