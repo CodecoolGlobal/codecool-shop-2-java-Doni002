@@ -100,6 +100,7 @@
             <a class="cta" href = "https://codecool.com/hu/kapcsolat/"><span>Contact</span></a>
             <button id="cart" class="button cart">
                 <img id="car" src="/static/pictures/navbar_icon_car.png">
+                <div id="cartCounter">0</div>
             </button>
         </div>
 
@@ -127,7 +128,7 @@
                         <p class="lead" th:text="${prod.getPrice()}">100 USD</p>
                     </div>
                     <div class="card-text">
-                        <a class="btn btn-success push-down" th:productId="${prod.id}">Add to cart</a>
+                        <a class="btn btn-success push-down addToCartButton" th:productId="${prod.id}">Add to cart</a>
                     </div>
                 </div>
             </div>
