@@ -149,7 +149,7 @@ header {
   align-items: center;
 }
 
-@media only screen and (max-width: 1630px) {
+@media only screen and (max-width: 1665px) {
   .nav {
     flex-direction: column;
   }

@@ -1,32 +1,38 @@
 export let cart = [];
 
 function init(){
-    getButtons();
+    for (const button of document.querySelectorAll(".addToCartButton")) {
+        addEventListenersForButtons(button)
+    }
 }
 
-function getButtons(){
-    document.querySelectorAll(".btn-success").forEach(addEventListenersForButtons)
-}
 
 function addEventListenersForButtons(btn) {
     btn.addEventListener("click", () => addToCart(btn));
 }
 
-function checkIfAlreadyInCart(newProduct){
+
+export function checkIfAlreadyInCart(newProduct){
     for (let product of cart){
         if (product.id === newProduct.id){
             product["quantity"] = product["quantity"] + 1;
-            product["price"] = product["price"] + product["price"];
             return;
         }
     }
+    newProduct["quantity"] = newProduct["quantity"] -1;
     cart.push(newProduct);
 }
 
 async function addToCart(btn){
     let product = await sendProductIdToBackEnd(btn.getAttribute("productId"));
     checkIfAlreadyInCart(product);
-    console.log(cart);
+    addToCartCounter();
+}
+
+function addToCartCounter(){
+    let cartCounter = document.querySelector("#cartCounter");
+    cartCounter.innerText = cart.length;
+    console.log(cart)
 }
 
 async function getFetchedProduct(url){

@@ -56,11 +56,11 @@ function createCheckoutModal(){
             <input id="cardNumber" type="number" name="cardNumber" placeholder="Enter your card number" required>
             
             <label for="cvv">CVV:</label>
-            <input id="cvv" type="number" name="cvv" placeholder="Enter CVV" required>
+            <input id="cvv" type="password" name="cvv" placeholder="Enter CVV" required>
             
             <label for="expireDate">Expire Date:</label>
-            <input id="expireYear" type="number" placeholder="Enter year" required>   
             <input id="expireMonth" type="number" placeholder="Enter month" required>
+            <input id="expireYear" type="number" placeholder="Enter year" required>   
             
             <label for="cardName">Name:</label>
             <input id="cardName" type="text" name="cardName" placeholder="Enter name" required>
