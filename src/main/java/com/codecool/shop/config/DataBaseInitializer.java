@@ -1,5 +1,6 @@
 package com.codecool.shop.config;
 
+import com.codecool.shop.dao.DatabaseManager;
 import com.codecool.shop.dao.ProductCategoryDao;
 import com.codecool.shop.dao.ProductDao;
 import com.codecool.shop.dao.SupplierDao;
@@ -13,17 +14,27 @@ import com.codecool.shop.model.Supplier;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
+import javax.sql.DataSource;
 import java.math.BigDecimal;
+import java.sql.SQLException;
 
 @WebListener
 public class DataBaseInitializer implements ServletContextListener {
 
+
+    DatabaseManager dataBase = new DatabaseManager();
     public static ProductDao productDataStore;
     public static ProductCategoryDao productCategoryDataStore;
     public static SupplierDao supplierDataStore;
 
     @Override
     public void contextInitialized(ServletContextEvent sce) {
+
+/*        try {
+            dataBase.setup();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }*/
         productDataStore = ProductDaoMem.getInstance();
         productCategoryDataStore = ProductCategoryDaoMem.getInstance();
         supplierDataStore = SupplierDaoMem.getInstance();
