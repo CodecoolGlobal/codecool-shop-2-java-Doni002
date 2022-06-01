@@ -15,6 +15,12 @@ header {
   position: initial;
 }
 
+.webpage-name > h2 {
+  font-size: 3rem;
+  font-family: 'Orbitron', sans-serif;
+  color: white;
+}
+
 .cta {background-image: linear-gradient(to right, violet 0%, darkblue  51%, violet  100%)}
 .cta {
   margin: 1vw;
@@ -38,6 +44,7 @@ header {
 .logo {
   cursor: pointer;
   background-color: black;
+  font-family: 'Orbitron', sans-serif;
 }
 
 .option {
@@ -50,11 +57,11 @@ header {
   border: solid 1px whitesmoke;
   color: #FFFFFF;
   text-align: center;
-  font-size: 1.5vw;
   padding: 0.25em;
   transition: all 0.5s;
   cursor: pointer;
   margin: 1vw;
+  font-size: 25px;
 }
 
 .button span:after, .span span:after {
@@ -100,8 +107,7 @@ header {
   background: linear-gradient(112.4deg, rgb(169, 28, 115) 21.6%, rgb(219, 112, 54) 92.2%);
 }
 
-#car,
-.keanuReaves {
+#car {
   animation: car 1s ease-in-out infinite alternate;
 }
 
@@ -110,7 +116,21 @@ header {
     transform: translateY(0%);
   }
   to {
-    transform: translateY(5%);
+    transform: translateY(3%);
+  }
+}
+
+.keanuReaves {
+  margin: 10px;
+  animation: flip 5s infinite;
+}
+
+@keyframes flip {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
   }
 }
 
@@ -120,7 +140,7 @@ header {
   transform-box: fill-box;
 }
 
-#Vector_20, #Vector_21 {
+#Vector_20 {
   animation: dollar_logo 2s infinite linear;
   transform-origin: center;
   transform-box: fill-box;
@@ -147,6 +167,7 @@ header {
 .buttons-div{
   display: flex;
   align-items: center;
+  margin: 10px;
 }
 
 @media only screen and (max-width: 1665px) {
@@ -160,9 +181,7 @@ header {
     display: flex;
     flex-direction: column;
   }
-}
 
-@media only screen and (max-width: 1200px) {
   .nav {
     flex-direction: column;
   }
