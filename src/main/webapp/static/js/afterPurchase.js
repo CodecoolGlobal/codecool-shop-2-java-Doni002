@@ -1,15 +1,17 @@
-import {closeCheckoutModal} from "./checkout.js";
+import {closeCheckoutModal, validateForm} from "/static/js/checkout.js";
 
 export function initPayButton(){
     document.querySelector("#checkoutButton").addEventListener("click", initPay);
 }
 
 function initPay(){
-    closeCheckoutModalWithoutBackground();
-    removePreviousEventListeners();
-    createPaidModalContainer()
-    document.querySelector(".paidModalContainer").innerHTML = createPaidModal();
-    initCloseModal();
+    if(validateForm(".paymentInfo")){
+        closeCheckoutModalWithoutBackground();
+        removePreviousEventListeners();
+        createPaidModalContainer()
+        document.querySelector(".paidModalContainer").innerHTML = createPaidModal();
+        initCloseModal();
+    }
 }
 
 function closeCheckoutModalWithoutBackground(){
@@ -29,7 +31,6 @@ function createPaidModalContainer(){
 function initCloseModal(){
     document.querySelector(".bluredBackground").addEventListener("click", closePaidModal);
     document.querySelector(".close").addEventListener("click", closePaidModal);
-    document.querySelector("#closeButton").addEventListener("click", closePaidModal);
 }
 
 export function closePaidModal(){

@@ -1,17 +1,30 @@
 import {closeReviewModal} from '/static/js/cartReview.js'
 import {initToCheckoutButton} from '/static/js/checkout.js'
+import {cart} from '/static/js/addToCart.js;'
 
 export function initToDeliveryButton(){
     document.querySelector("#toDeliveryButton").addEventListener("click", toDelivery);
 }
 
 function toDelivery(){
-    closeReviewModalWithoutBackground();
-    removePreviousEventListeners();
-    createDeliveryModalContainer();
-    document.querySelector(".deliveryModalContainer").innerHTML = createDeliveryModal();
-    initCloseModal();
-    initToCheckoutButton();
+    if(checkEmpty()){
+        closeReviewModalWithoutBackground();
+        removePreviousEventListeners();
+        createDeliveryModalContainer();
+        document.querySelector(".deliveryModalContainer").innerHTML = createDeliveryModal();
+        initCloseModal();
+        initToCheckoutButton();
+    }
+    else{
+        document.querySelector("#toDeliveryButton").innerText = "Cart is Empty"
+    }
+}
+
+function checkEmpty(){
+    if(cart.length === 0){
+        return false;
+    }
+    return true;
 }
 
 function initCloseModal(){
@@ -44,29 +57,26 @@ function createDeliveryModal(){
     orderData += `
         <form id="deliveryModal" class="form">
             <label for="name">Name:</label>
-            <input id="name" type="text" name="name" placeholder="Enter your name" required>  
+            <input class="deliveryInfo" id="name" type="text" name="name" placeholder="Enter your name">  
               
             <label for="email">Email:</label>
-            <input id="email" type="text" name="email" placeholder="Enter your email" required>
+            <input class="deliveryInfo" id="email" type="text" name="email" placeholder="Enter your email">
             
             <label for="phone">Phone:</label>
-            <input id="phone" type="text" name="phone" placeholder="Add your phone number" required>
+            <input class="deliveryInfo" id="phone" type="text" name="phone" placeholder="Add your phone number">
             
             <label for="country">Country:</label>
-            <input id="country" type="text" name="country" placeholder="Add your country" required>
+            <input class="deliveryInfo" id="country" type="text" name="country" placeholder="Add your country">
             
             <label for="city">City:</label>
-            <input id="city" type="text" name="city" placeholder="Add your city" required> 
+            <input class="deliveryInfo" id="city" type="text" name="city" placeholder="Add your city"> 
                     
             <label for="street">Street:</label>         
-            <input id="street" type="text" name="street" placeholder="Enter city's street" required>
-            
-            <div class="buttonContainer">
-                <button
-                    style="background-image: linear-gradient(to right, rgb(169, 28, 115) 0%, rgb(219, 112, 54) 51%, rgb(169, 28, 115) 100%)"
-                    id="toCheckoutButton" class="cta">Continue
-                </button>
-            </div>
+            <input class="deliveryInfo" id="street" type="text" name="street" placeholder="Enter city's street">
+            <button
+                style="background-image: linear-gradient(to right, rgb(169, 28, 115) 0%, rgb(219, 112, 54) 51%, rgb(169, 28, 115) 100%)"
+                id="toCheckoutButton" class="cta" type="button">Continue
+            </button>
         </form>
     `
 
