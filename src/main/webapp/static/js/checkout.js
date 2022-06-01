@@ -82,7 +82,7 @@ function createCheckoutModal(){
             <label for="cardName">Name:</label>
             <input class="paymentInfo" id="cardName" type="text" name="cardName" placeholder="Enter name">
             
-            <p class="totalPrice">Total price: ${calculateTotalPrice()}$</p>
+            <p class="totalPrice" style="color: cyan;">Total price: ${calculateTotalPrice()}$</p>
                 <button
                     style="background-image: linear-gradient(to right, rgb(169, 28, 115) 0%, rgb(219, 112, 54) 51%, rgb(169, 28, 115) 100%)"
                     id="checkoutButton" class="cta" type="button">Pay

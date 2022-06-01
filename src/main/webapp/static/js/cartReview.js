@@ -58,7 +58,7 @@ function createModalForReviewCart(){
             <div class="checkoutProductContainerElements">
                 <img src="/static/img/product_${product['id']}.jpg" alt="" width="210" height="75">
                 <p>product: ${product['name']}</p>
-                <p>price: ${product['price']}$</p>
+                <p style="color: midnightblue;">price: ${product['price']}$</p>
                 <p>quantity: ${product['quantity']}</p>
             </div>
         </div>
@@ -73,7 +73,7 @@ function createModalForReviewCart(){
         </div>
         <p class="modalMessage">Your Cart:</p>
         ${orderData}
-        <p style="filter: drop-shadow(3px 3px 5px white);" class="totalPrice">Total Price: ${totalPrice}$</p>
+        <p style="filter: drop-shadow(3px 3px 5px white); color: cyan;" class="totalPrice">Total Price: ${totalPrice}$</p>
         <div class="buttonContainer">
             <button style="background-image: linear-gradient(to right, rgb(169, 28, 115) 0%, rgb(219, 112, 54) 51%, rgb(169, 28, 115) 100%)" id="toDeliveryButton" class="cta" >Proceed to Checkout</button>
         </div>

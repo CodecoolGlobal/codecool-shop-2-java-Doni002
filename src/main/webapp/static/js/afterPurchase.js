@@ -46,7 +46,7 @@ function createPaidModal(){
     let orderData = ``;
     orderData += `
     <div class="cartReviewModal" id="paidModal">
-        <p style="color: greenyellow" class="modalMessage">Your order number is: ${orderNumberGenerator()}</p>
+        <p class="modalMessage" style="color:cyan">Your order number is: ${orderNumberGenerator()}</p>
     </div>
     `
     return `
