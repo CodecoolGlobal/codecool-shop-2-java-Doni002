@@ -223,6 +223,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 #dealership > img {
@@ -232,4 +233,10 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
 
 #dealership-text {
     font-size: 3vh;
+}
+
+#dealership-text > img {
+    width: 2vw;
+    margin: 1vw;
+    height: 2vw;
 }
