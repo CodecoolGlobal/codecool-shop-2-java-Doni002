@@ -23,7 +23,6 @@ public class GetProducts extends HttpServlet {
 @Override
 protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HashMap<Product, Integer> products = CartDaoMem.getAll();
-        System.out.println(products);
         PrintWriter out = resp.getWriter();
         List<String> jsonList = new ArrayList<>();
         Gson gson = new Gson();
