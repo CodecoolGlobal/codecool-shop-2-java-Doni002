@@ -9,7 +9,7 @@
 
 .checkoutProductContainer {
     padding: 3vw;
-    margin: 1vw;
+    margin: 3vw;
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
 }
 
@@ -17,21 +17,25 @@
     margin: 0.5vw;
     border: solid 3px #23a6d5;
     filter: drop-shadow(0 6px 5px white);
+    width: 75%;
+    height: 75%;
 }
 
 .checkoutProductContainerElements > p {
     margin: 0.5vw;
+    font-size: 25px;
 }
 
 .checkoutProductContainerElements{
     display: flex;
+    flex-direction: column;
     align-items: center;
     color: white;
     filter: drop-shadow(3px 3px 5px white);
 }
 
 .modalMessage {
-    font-size: 4vw;
+    font-size: 3vw;
     color: white;
     filter: drop-shadow(3px 3px 5px white);
     margin: auto;
@@ -47,7 +51,7 @@
 }
 
 label {
-    padding: 1vw;
+    padding: 0.5vw;
 }
 
 .totalPrice {
@@ -63,14 +67,13 @@ label {
 }
 
 #cartReviewModal{
+    transform: translate(75%, 0%);
     display: flex;
     flex-direction: column;
     position: absolute;
     z-index: 2;
-    width: 70vw;
-    top: 15vw;
-    left: 15.25vw;
-    padding: 1vw;
+    top: 10vw;
+    width: 40vw;
     max-height: calc(100vh - 1vw);
     overflow-y: auto;
     background-image: url("/static/pictures/webshop_bg.jpg");
@@ -104,87 +107,39 @@ label {
     background: rgba(0,0,0,0.7);
 }
 
-
-/*Original navbar size*/
-@media only screen and (max-width: 1700px) {
-    #cartReviewModal {
-        top: 16vw;
-    }
+.modalBackgroundWithoutFilter {
+    background-color: black;
 }
 
-/*First navbar transformation*/
-@media only screen and (max-width: 1630px) {
-    #cartReviewModal {
-        top: 30vw;
-    }
-}
-
-@media only screen and (max-width: 1450px) {
-    #cartReviewModal {
-        top: 33vw;
-    }
-}
-
-@media only screen and (max-width: 1350px) {
-    #cartReviewModal {
-        top: 35vw;
-    }
-}
-
-@media only screen and (max-width: 1350px) {
-    #cartReviewModal {
-        top: 37vw;
-    }
-}
-/* Second navbar transformation */
-@media only screen and (max-width: 1200px) {
-    #cartReviewModal {
-        top: 62vw;
-    }
-}
-
-@media only screen and (max-width: 1100px) {
-    #cartReviewModal {
-        top: 65vw;
-    }
-}
-
-@media only screen and (max-width: 1000px) {
-    #cartReviewModal {
-        top: 69vw;
-    }
+.modalBackgroundWithFilter {
+    background-color: black;
+    filter: drop-shadow(0 6px 5px white);
 }
 
 @media only screen and (max-width: 900px) {
-    #cartReviewModal {
-        top: 73vw;
-    }
 
     .checkoutProductContainerElements{
         flex-direction: column;
     }
 }
 
-@media only screen and (max-width: 800px) {
+
+@media only screen and (max-width: 650px) {
     #cartReviewModal {
-        top: 80vw;
+        width: 70vw;
+        transform: translate(25%, 0%);
     }
 }
 
-@media only screen and (max-width: 700px) {
-    #cartReviewModal {
-        top: 88vw;
-    }
-}
+@media only screen and (max-width: 1000px) {
 
-@media only screen and (max-width: 600px) {
-    #cartReviewModal {
-        top: 88vw;
+    svg {
+        display: none;
     }
-}
 
-@media only screen and (max-width: 666px) {
-    #cartReviewModal {
-        top: 90vw;
+    .modalBackgroundWithFilter,
+    .modalBackgroundWithoutFilter{
+        background-color: transparent;
+        filter: none;
     }
 }
