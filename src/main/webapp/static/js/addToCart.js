@@ -1,6 +1,6 @@
-export let cart = [];
+//export let cart = [];
 
-function init(){
+export function init(){
     for (const button of document.querySelectorAll(".addToCartButton")) {
         addEventListenersForButtons(button)
     }
@@ -19,9 +19,10 @@ export function checkIfAlreadyInCart(newProduct){
             return;
         }
     }
-    newProduct["quantity"] = newProduct["quantity"] -1;
+    newProduct["quantity"] = newProduct["quantity"];
     cart.push(newProduct);
 }
+
 
 async function addToCart(btn){
     let product = await sendProductIdToBackEnd(btn.getAttribute("productId"));
@@ -40,9 +41,12 @@ async function getFetchedProduct(url){
     return response.json();
 }
 
+async function getProductsInCart(productId){
+    return await getFetchedProduct("/cart/add?productId=" + productId);
+}
+
 
 async function sendProductIdToBackEnd(productId){
     return await getFetchedProduct("/cart/add?productId=" + productId);
 }
 
-init();
