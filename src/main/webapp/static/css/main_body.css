@@ -24,8 +24,7 @@ body {
     scrollbar-width: none; /* Firefox */
     scroll-behavior: smooth;
     text-align: center;
-    background-image: url("/static/pictures/webshop_bg.jpg");
-    background-repeat: repeat;
+    background: linear-gradient(140deg, #FEED07 0%, #FE6A50 5%, #ED00AA 15%, #2FE3FE 50%, #8900FF 100%);
 }
 
 html::-webkit-scrollbar, body::-webkit-scrollbar {
@@ -155,9 +154,9 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
     background-image: url('/static/pictures/musicplayer_bg_guy_banner.png');
     background-size: cover;
     background-position: center center;
-    top: 10vw;
     height: 70vh;
     width: 100%;
+    top: 12vw;
     position: sticky;
     filter: drop-shadow(6px -3px 5px blueviolet);
     animation: moving 5s ease-in-out infinite;
