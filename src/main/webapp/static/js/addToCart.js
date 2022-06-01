@@ -1,18 +1,18 @@
-//export let cart = [];
+export let cart = [];
 
-export function init(){
+export async function init() {
+    cart = await getProductsInCart();
+    addToCartCounter();
     for (const button of document.querySelectorAll(".addToCartButton")) {
         addEventListenersForButtons(button)
     }
 }
 
-
 function addEventListenersForButtons(btn) {
     btn.addEventListener("click", () => addToCart(btn));
 }
 
-
-export function checkIfAlreadyInCart(newProduct){
+export async  function checkIfAlreadyInCart(newProduct){
     for (let product of cart){
         if (product.id === newProduct.id){
             product["quantity"] = product["quantity"] + 1;
@@ -20,33 +20,41 @@ export function checkIfAlreadyInCart(newProduct){
         }
     }
     newProduct["quantity"] = newProduct["quantity"];
-    cart.push(newProduct);
+    cart = await getProductsInCart();
 }
-
 
 async function addToCart(btn){
     let product = await sendProductIdToBackEnd(btn.getAttribute("productId"));
-    checkIfAlreadyInCart(product);
+    await checkIfAlreadyInCart(product);
     addToCartCounter();
 }
 
 function addToCartCounter(){
-    let cartCounter = document.querySelector("#cartCounter");
-    cartCounter.innerText = cart.length;
-    console.log(cart)
+    let count = 0;
+    for (const item of cart) {
+        if(item["quantity"] === 1){
+            count++;
+        } else {
+            count += item["quantity"];
+        }
+    }
+    document.querySelector("#cartCounter").innerText = count;
 }
 
-async function getFetchedProduct(url){
+async function sendProductToBackEnd(url){
     let response = await fetch(url);
     return response.json();
 }
 
-async function getProductsInCart(productId){
-    return await getFetchedProduct("/cart/add?productId=" + productId);
+async function fetchProductsInCart(url){
+    let response = await fetch(url);
+    return response.json();
 }
 
+async function getProductsInCart(){
+    return await fetchProductsInCart("/cart/api/get");
+}
 
 async function sendProductIdToBackEnd(productId){
-    return await getFetchedProduct("/cart/add?productId=" + productId);
+    return await sendProductToBackEnd("/cart/add?productId=" + productId);
 }
-

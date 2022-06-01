@@ -1,6 +1,6 @@
 package com.codecool.shop.controller;
 
-import com.codecool.shop.config.DataBaseInitializer;
+
 import com.codecool.shop.dao.implementation.CartDaoMem;
 import com.codecool.shop.model.HashmapToJsonModel;
 import com.codecool.shop.model.Product;
@@ -13,24 +13,24 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @WebServlet(urlPatterns = {"/cart/api/get"})
 public class GetProducts extends HttpServlet {
-
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+@Override
+protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HashMap<Product, Integer> products = CartDaoMem.getAll();
+        System.out.println(products);
         PrintWriter out = resp.getWriter();
-        for (Map.Entry<Product,Integer> entry : products.entrySet())
-            System.out.println("Key = " + entry.getKey() +
-                    ", Value = " + entry.getValue());
-    }
-/*        HashmapToJsonModel jsonModel = new HashmapToJsonModel(product.getDefaultPrice(),CartDaoMem.getAll().get(product), product.getId(),product.getName());
+        List<String> jsonList = new ArrayList<>();
         Gson gson = new Gson();
-        String json = gson.toJson(jsonModel);
-        out.println(json);*/
-
-    //}
+        for (Map.Entry<Product,Integer> entry : products.entrySet()){
+        jsonList.add(gson.toJson(new HashmapToJsonModel(entry.getKey().getDefaultPrice(),entry.getValue(),
+                entry.getKey().getId(), entry.getKey().getName())));
+    }
+        out.println(jsonList);
+}
 }
