@@ -17,8 +17,8 @@
     align-items: center;
     justify-content: center;
     padding: 1em;
-    background:
-            url('/static/pictures/musicplayer_bg_nightcity.jpg');
+    background: url('/static/pictures/musicplayer_bg_nightcity.jpg');
+    background-size: cover;
     animation: moving 10s linear infinite;
     animation-direction: alternate-reverse;
     border-top: inset 5px purple;
@@ -84,4 +84,62 @@ a {
     /*Border-Animation*/
     position: relative;
     z-index: 10;
+}
+
+/*Smaller Monitors - Music Player without Image*/
+@media only screen and (max-width: 1350px) {
+    .music_player_body > img {
+        display: none;
+    }
+
+    .controls {
+        justify-content: center;
+    }
+
+    .music_player_body {
+        align-items: center;
+        height: 30vw;
+        width: 90vw;
+    }
+
+    .info p {
+        font-size: 1.5vw;
+    }
+
+    .info h2 {
+        font-size: 2vw;
+    }
+
+    .controls img {
+        width: 2vw;
+    }
+}
+
+/*Small Screens - Mobile*/
+@media only screen and (max-width: 600px) {
+    .music_player_body > img {
+        display: none;
+    }
+
+    .controls {
+        justify-content: center;
+    }
+
+    .music_player_body {
+        align-items: center;
+        height: 70vw;
+        width: 90vw;
+    }
+
+    .info p {
+        font-size: 4vw;
+    }
+
+    .info h2 {
+        font-size: 6vw;
+    }
+
+    .controls img {
+        width: 6vw;
+    }
 }
