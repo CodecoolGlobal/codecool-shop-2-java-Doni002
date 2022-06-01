@@ -1,9 +1,14 @@
 .row .card {
     margin: 1.5em;
-    padding: 0.25em;
+    padding: 1em;
     height: 32.5em;
     /*width: 20em;*/
     opacity: 0.9;
+}
+
+.row {
+    padding: 10vw;
+    flex-wrap: nowrap;
 }
 
 .card-content {
@@ -127,6 +132,20 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
     padding: 40px;
     height: 126%;
     display: block;
+    overflow: auto;
+}
+
+.container::-webkit-scrollbar {
+    width: 0.25rem;
+}
+
+.container::-webkit-scrollbar-track {
+    background: #1e1e24;
+}
+
+.container::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #FEED07 0%, #FE6A50 5%, #ED00AA 15%, #2FE3FE 50%, #8900FF 100%);
+    border-radius: 2vw;
 }
 
 .label {
@@ -189,4 +208,28 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
     background-repeat: repeat;
     position: relative;
     padding: 3vw;
+}
+
+#dealership {
+    background: black;
+    z-index: 1;
+    font-size: 2vw;
+    color: #ffffff;
+    filter: drop-shadow(0 6px 5px blueviolet);
+    top: calc(-2 * var(--borderWidth));
+    left: calc(-2 * var(--borderWidth));
+    height: calc(100% + var(--borderWidth) * 5);
+    width: calc(100% + var(--borderWidth) * 5);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#dealership > img {
+    height: 20vw;
+    padding: 1vw;
+}
+
+#dealership-text {
+    font-size: 3vh;
 }
