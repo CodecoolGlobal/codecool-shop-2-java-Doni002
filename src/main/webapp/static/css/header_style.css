@@ -12,7 +12,9 @@ header {
   align-items: center;
   background-color: black;
   filter: drop-shadow(0 6px 5px white);
-  position: initial;
+  z-index: 1;
+  width: 100%;
+  position: fixed;
 }
 
 .webpage-name > h2 {
@@ -53,7 +55,6 @@ header {
 
 .button, .span {
   border-radius: 4px;
-  /*background: linear-gradient(150deg, #072c94, #93c8c4, #2c2e3b);*/
   border: solid 1px whitesmoke;
   color: #FFFFFF;
   text-align: center;
@@ -173,6 +174,10 @@ header {
 @media only screen and (max-width: 1665px) {
   .nav {
     flex-direction: column;
+  }
+
+  header {
+    position: relative;
   }
 }
 
