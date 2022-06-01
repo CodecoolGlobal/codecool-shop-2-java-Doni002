@@ -7,12 +7,29 @@ export function initToCheckoutButton(){
 }
 
 function initCheckout(){
-    closeDeliveryModalWithoutBackground();
-    removePreviousEventListeners();
-    createCheckoutModalContainer();
-    document.querySelector(".checkoutModalContainer").innerHTML = createCheckoutModal();
-    initCloseModal();
-    initPayButton();
+    if(validateForm(".deliveryInfo")){
+        closeDeliveryModalWithoutBackground();
+        removePreviousEventListeners();
+        createCheckoutModalContainer();
+        document.querySelector(".checkoutModalContainer").innerHTML = createCheckoutModal();
+        initCloseModal();
+        initPayButton();
+    }
+}
+
+export function validateForm(selector){
+    let validation;
+    for (const field of document.querySelectorAll(selector)) {
+        if(field.value.length === 0){
+            field.style.borderColor='red';
+            validation = false;
+        } else {
+            field.style.borderColor = "grey";
+        }
+    }
+    if(validation !== false){
+        return true;
+    }
 }
 
 function closeDeliveryModalWithoutBackground(){
@@ -53,25 +70,23 @@ function createCheckoutModal(){
     <div class="cartReviewModal">
         <form id="checkoutModal" class="form">
             <label for="cardNumber">Card Number:</label>
-            <input id="cardNumber" type="number" name="cardNumber" placeholder="Enter your card number" required>
+            <input class="paymentInfo" id="cardNumber" type="text" name="cardNumber" placeholder="Enter your card number">
             
             <label for="cvv">CVV:</label>
-            <input id="cvv" type="password" name="cvv" placeholder="Enter CVV" required>
+            <input class="paymentInfo" id="cvv" type="password" name="cvv" placeholder="Enter CVV">
             
             <label for="expireDate">Expire Date:</label>
-            <input id="expireMonth" type="number" placeholder="Enter month" required>
-            <input id="expireYear" type="number" placeholder="Enter year" required>   
+            <input class="paymentInfo" id="expireMonth" type="number" placeholder="Enter month">
+            <input class="paymentInfo" id="expireYear" type="number" placeholder="Enter year">   
             
             <label for="cardName">Name:</label>
-            <input id="cardName" type="text" name="cardName" placeholder="Enter name" required>
+            <input class="paymentInfo" id="cardName" type="text" name="cardName" placeholder="Enter name">
             
             <p class="totalPrice">Total price: ${calculateTotalPrice()}$</p>
-            <div class="buttonContainer">
                 <button
                     style="background-image: linear-gradient(to right, rgb(169, 28, 115) 0%, rgb(219, 112, 54) 51%, rgb(169, 28, 115) 100%)"
-                    id="checkoutButton" class="cta">Pay
+                    id="checkoutButton" class="cta" type="button">Pay
                 </button>
-            </div>
         </form>
     </div>
     `
