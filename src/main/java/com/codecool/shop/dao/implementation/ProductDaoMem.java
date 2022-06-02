@@ -1,12 +1,18 @@
 package com.codecool.shop.dao.implementation;
 
 
+import com.codecool.shop.dao.ProductCategoryDao;
 import com.codecool.shop.dao.ProductDao;
+import com.codecool.shop.dao.SupplierDao;
 import com.codecool.shop.model.Product;
 import com.codecool.shop.model.ProductCategory;
 import com.codecool.shop.model.Supplier;
 
 import javax.sql.DataSource;
+import java.math.BigDecimal;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -19,7 +25,7 @@ public class ProductDaoMem implements ProductDao {
 
     /* A private Constructor prevents any other class from instantiating.
      */
-    private ProductDaoMem(DataSource dataSource) {
+    public ProductDaoMem(DataSource dataSource) {
         this.dataSource = dataSource;
     }
 
@@ -50,8 +56,31 @@ public class ProductDaoMem implements ProductDao {
     }
 
     @Override
-    public List<Product> getAll() {
-        return data;
+    public List<Product> getAll(ProductCategoryDao productCategory, SupplierDao supplierDao) {
+        try (Connection connection = dataSource.getConnection()) {
+            String sql = "SELECT product.name, product.price, product.currency, product.description, c.name, c.department, c.description, s.name, s.description FROM product\n" +
+                    "JOIN category c on c.id = product.category_id\n" +
+                    "JOIN supplier s on s.id = product.supplier_id";
+            ResultSet resultSet = connection.createStatement().executeQuery(sql);
+            List<Product> result = new ArrayList<>();
+            Product product = null;
+            while (resultSet.next()) {
+                product = new Product(
+                        resultSet.getString(1),
+                        new BigDecimal(resultSet.getString(2)),
+                        resultSet.getString(3),
+                        resultSet.getString(4),
+                        new ProductCategory(resultSet.getString(5),
+                                resultSet.getString(6),
+                                resultSet.getString(7)),
+                        new Supplier(resultSet.getString(8),
+                                resultSet.getString(9)));
+                result.add(product);
+            }
+            return result;
+        } catch (SQLException throwables) {
+            throw new RuntimeException("Error while reading data", throwables);
+        }
     }
 
     @Override

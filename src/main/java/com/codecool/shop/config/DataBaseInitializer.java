@@ -36,6 +36,7 @@ public class DataBaseInitializer implements ServletContextListener {
         } catch (SQLException | IOException e) {
             e.printStackTrace();
         }
+
         productDataStore = ProductDaoMem.getInstance();
         productCategoryDataStore = ProductCategoryDaoMem.getInstance();
         supplierDataStore = SupplierDaoMem.getInstance();

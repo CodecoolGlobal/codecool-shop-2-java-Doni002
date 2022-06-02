@@ -6,17 +6,26 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.sql.SQLException;
 import java.util.Properties;
+import java.util.List;
 
+import com.codecool.shop.dao.implementation.ProductCategoryDaoMem;
+import com.codecool.shop.dao.implementation.ProductDaoMem;
 import com.codecool.shop.dao.implementation.SupplierDaoMem;
+import com.codecool.shop.model.Product;
 import org.postgresql.ds.PGSimpleDataSource;
 
 public class DatabaseManager {
 
     SupplierDaoMem supplierDao;
+    ProductDao productDao;
+    ProductCategoryDao productCategoryDao;
 
     public void setup() throws SQLException, IOException {
         try{
             DataSource dataSource = connect();
+            supplierDao = new SupplierDaoMem(dataSource);
+            productDao = new ProductDaoMem(dataSource);
+            productCategoryDao = new ProductCategoryDaoMem(dataSource);
         }catch (Exception e){ throw new IOException();}}
 
     private DataSource connect() throws SQLException, IOException {
@@ -42,4 +51,12 @@ public class DatabaseManager {
             throw new IOException(e);
         }
     }
+
+    public List<Product> getAllProduct(){
+        return productDao.getAll(productCategoryDao, supplierDao);
+
+    }
+
+
+
 }
