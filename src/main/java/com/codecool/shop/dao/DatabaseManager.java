@@ -12,6 +12,9 @@ import com.codecool.shop.dao.implementation.ProductCategoryDaoMem;
 import com.codecool.shop.dao.implementation.ProductDaoMem;
 import com.codecool.shop.dao.implementation.SupplierDaoMem;
 import com.codecool.shop.model.Product;
+import com.codecool.shop.model.ProductCategory;
+import com.codecool.shop.model.Supplier;
+import jdk.jfr.Category;
 import org.postgresql.ds.PGSimpleDataSource;
 
 public class DatabaseManager {
@@ -57,6 +60,27 @@ public class DatabaseManager {
 
     }
 
+    public Product findProductById(int id){
+        return productDao.find(id);
+    }
 
+    public void addProductDao(Product product) {
+        productDao.add(product);
+    }
 
+    public void addCategory(ProductCategory category){
+        productCategoryDao.add(category);
+    }
+
+    public List<ProductCategory> getProductCategories(){
+        return productCategoryDao.getAll();
+    }
+
+    public List<Supplier> getSuppliers(){
+        return supplierDao.getAll();
+    }
+
+    public void addSupplier(Supplier supplier){
+        supplierDao.add(supplier);
+    }
 }

@@ -20,7 +20,7 @@ public class AddToCartServlet extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int productId = Integer.parseInt(req.getParameter("productId"));
-        Product product = DataBaseInitializer.productDataStore.find(productId);
+        Product product = DataBaseInitializer.dataBase.findProductById(productId);
         CartDaoMem.add(product);
         PrintWriter out = resp.getWriter();
         HashmapToJsonModel jsonModel = new HashmapToJsonModel(product.getDefaultPrice(),CartDaoMem.getAll().get(product), product.getId(),product.getName());

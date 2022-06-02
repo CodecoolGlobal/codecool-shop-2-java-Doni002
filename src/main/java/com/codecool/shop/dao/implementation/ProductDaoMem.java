@@ -45,6 +45,7 @@ public class ProductDaoMem implements ProductDao {
         data.add(product);
     }
 
+
     @Override
     public Product find(int id) {
         return data.stream().filter(t -> t.getId() == id).findFirst().orElse(null);
@@ -58,7 +59,7 @@ public class ProductDaoMem implements ProductDao {
     @Override
     public List<Product> getAll(ProductCategoryDao productCategory, SupplierDao supplierDao) {
         try (Connection connection = dataSource.getConnection()) {
-            String sql = "SELECT product.name, product.price, product.currency, product.description, c.name, c.department, c.description, s.name, s.description FROM product\n" +
+            String sql = "SELECT product.name, product.price, product.currency, product.description, c.name, c.department, c.description, s.name, s.description, product.id FROM product\n" +
                     "JOIN category c on c.id = product.category_id\n" +
                     "JOIN supplier s on s.id = product.supplier_id";
             ResultSet resultSet = connection.createStatement().executeQuery(sql);
@@ -74,7 +75,8 @@ public class ProductDaoMem implements ProductDao {
                                 resultSet.getString(6),
                                 resultSet.getString(7)),
                         new Supplier(resultSet.getString(8),
-                                resultSet.getString(9)));
+                                resultSet.getString(9)),
+                        resultSet.getInt(10));
                 result.add(product);
             }
             return result;
