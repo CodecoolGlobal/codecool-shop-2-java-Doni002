@@ -5,6 +5,9 @@ import com.codecool.shop.dao.ProductCategoryDao;
 import com.codecool.shop.model.ProductCategory;
 
 import javax.sql.DataSource;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,7 +19,7 @@ public class ProductCategoryDaoMem implements ProductCategoryDao {
 
     /* A private Constructor prevents any other class from instantiating.
      */
-   private ProductCategoryDaoMem(DataSource dataSource) {
+    public ProductCategoryDaoMem(DataSource dataSource) {
         this.dataSource = dataSource;
     }
 
@@ -39,7 +42,12 @@ public class ProductCategoryDaoMem implements ProductCategoryDao {
 
     @Override
     public ProductCategory find(int id) {
-        return data.stream().filter(t -> t.getId() == id).findFirst().orElse(null);
+        return null;
+    }
+
+    @Override
+    public ProductCategory find(String id) {
+        return null;
     }
 
     @Override
