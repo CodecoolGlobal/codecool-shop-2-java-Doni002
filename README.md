@@ -1,8 +1,6 @@
 # codecool-shop-2-java-Doni002
 
-This is a little project of Me and Doni, at CodeCool in the end of 3.module we made a functional webshop with backend and frontend. It's a Cyberpunk themed Webshop with
-cars from the game, and their description, with their real price, and their manufacturer. We made this project under 2 sprints, at the first we have made it functional but everything
-is working with the local memory of the computer under 3 days. In this sprint we have made it working with a database (Postgres), and the frontend got major reworks. 
+This is a little project of Me and Doni, at CodeCool at the end of the 3. module we made a functional webshop with backend and frontend. It's a Cyberpunk themed Webshop with cars from the game, their description, their real price, and their manufacturer. We made this project under 2 sprints, at the first we made it functional but everything is working with the local memory of the computer for under 3 days. In this sprint, under 3 extra days, we made it work with a database (Postgres), and the front end got major reworks. 
 
 (You can check out our first sprinnt with the link https://github.com/CodecoolGlobal/codecool-shop-1-java-RolandMarton)
 
