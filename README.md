@@ -18,9 +18,7 @@ Stacks/Technologies used for this project
 To run this file you will have to do the following steps:
 
 1) Clone the repository from Github to your local computer
-2) To run the application you will need two main things.
-  A) To configure Jetty -> Instead of running main with Application, you have to go to Edit Configurations then the + sign and under Maven just write "jetty:run".
-You will have to start the server with this command. 
-  B) A Postgres database. Make a new database, then fill it with dbInitalizer.sql. It will drop the existing tables if you have one so don't worry.
-3) Hurray everything is now set! Start your server with Jetty, it will have to write Connection is Ok in the terminal 
+2) To run the application you will need two main things. To configure Jetty -> Instead of running main with Application, you have to go to Edit Configurations then the + sign and under Maven just write "jetty:run". You will have to start the server with this command. 
+3) A Postgres database. Make a new database, then fill it with dbInitalizer.sql. It will drop the existing tables if you have one so don't worry.
+4) Hurray everything is now set! Start your server with Jetty, it will have to write Connection is Ok in the terminal 
 and in your browser (localhost:8080) just enjoy this little project!
